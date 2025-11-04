@@ -3,6 +3,30 @@
   "WorkspaceRootPath": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\models\\orderitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\models\\cartitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\models\\cart.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -31,12 +55,90 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "OrderItem.cs",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\OrderItem.cs",
+              "RelativeDocumentMoniker": "PCShop\\Models\\OrderItem.cs",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\OrderItem.cs",
+              "RelativeToolTip": "PCShop\\Models\\OrderItem.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAxwAwAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T13:13:57.556Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "PCShop\\Models\\Order.cs",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\Order.cs",
+              "RelativeToolTip": "PCShop\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T13:09:54.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "PCShop\\Models\\Product.cs",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\Product.cs",
+              "RelativeToolTip": "PCShop\\Models\\Product.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T13:04:05.876Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartItem.cs",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\CartItem.cs",
+              "RelativeDocumentMoniker": "PCShop\\Models\\CartItem.cs",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\CartItem.cs",
+              "RelativeToolTip": "PCShop\\Models\\CartItem.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABEAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T13:02:11.044Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Cart.cs",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\Cart.cs",
+              "RelativeDocumentMoniker": "PCShop\\Models\\Cart.cs",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\Cart.cs",
+              "RelativeToolTip": "PCShop\\Models\\Cart.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:58:02.879Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\User.cs",
+              "RelativeDocumentMoniker": "PCShop\\Models\\User.cs",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Models\\User.cs",
+              "RelativeToolTip": "PCShop\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAA2AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-18T12:57:20.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Program.cs",
               "RelativeDocumentMoniker": "PCShop\\Program.cs",
               "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Program.cs",
               "RelativeToolTip": "PCShop\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-10-18T10:53:55.654Z",
               "EditorCaption": ""
