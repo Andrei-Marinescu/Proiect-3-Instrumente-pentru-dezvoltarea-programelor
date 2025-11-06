@@ -20,6 +20,9 @@ namespace PCShop.Models
         // Product(1) : OrderItem(N) | Product(N) : Order(M)
         public ICollection<OrderItem> OrderItems { get; set; }
 
+        // Product(1) : Wishlist(N)
+        public ICollection<Wishlist> Wishlists { get; set; }
+
         public int ProviderId { get; set; }
         [ForeignKey("ProviderId")]
         public Provider Provider { get; set; }
