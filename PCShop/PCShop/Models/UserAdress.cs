@@ -5,6 +5,8 @@ namespace PCShop.Models
 {
     public class UserAdress
     {
+        [Key]
+        public int IdUserAdress { get; set; }
         public int UserId {  get; set; }
         [ForeignKey("UserId")]
         public User User { get; set; }
