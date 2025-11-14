@@ -1,8 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 
 namespace PCShop.Models
 {
-    public class PCShopContext : DbContext
+    public class PCShopContext : IdentityDbContext<User, IdentityRole<int>, int>
     {
         public PCShopContext(DbContextOptions<PCShopContext> options) : base(options) { }
 
