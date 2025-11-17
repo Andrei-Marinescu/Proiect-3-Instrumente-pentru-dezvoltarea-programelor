@@ -188,12 +188,172 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Addresses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Addresses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Addresses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Addresses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Addresses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRkcmVzc2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/CartItems/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/CartItems/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/CartItems/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/CartItems/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/CartItems/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydEl0ZW1zXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Carts/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Carts/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Carts/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Carts/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Carts/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Categories/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Categories/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Categories/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Categories/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Categories/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Home/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/OrderItems/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/OrderItems/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/OrderItems/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/OrderItems/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/OrderItems/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJJdGVtc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Orders/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Orders/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Orders/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Orders/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Orders/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Products/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Products/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Products/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Products/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Products/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Providers/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmlkZXJzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Providers/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmlkZXJzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Providers/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmlkZXJzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Providers/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmlkZXJzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Providers/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmlkZXJzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Shared/Error.cshtml]
@@ -206,6 +366,66 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/UserAdresses/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFkcmVzc2VzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/UserAdresses/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFkcmVzc2VzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/UserAdresses/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFkcmVzc2VzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/UserAdresses/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFkcmVzc2VzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/UserAdresses/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlckFkcmVzc2VzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Users/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Users/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Users/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Users/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Users/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlcnNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Wishlists/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RzXENyZWF0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Wishlists/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RzXERlbGV0ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Wishlists/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RzXERldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Wishlists/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RzXEVkaXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/Wishlists/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcV2lzaGxpc3RzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Facultate/An4/Proiect-3-Instrumente-pentru-dezvoltarea-programelor/PCShop/PCShop/Views/_ViewImports.cshtml]
