@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PCShop.Models;
@@ -11,9 +12,11 @@ using PCShop.Models;
 namespace PCShop.Migrations
 {
     [DbContext(typeof(PCShopContext))]
-    partial class PCShopContextModelSnapshot : ModelSnapshot
+    [Migration("20251117092427_Add image field for Product Model")]
+    partial class AddimagefieldforProductModel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

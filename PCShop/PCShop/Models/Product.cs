@@ -10,6 +10,7 @@ namespace PCShop.Models
         public string Description { get; set; }
         public int QuantityAvailable { get; set; }
         public decimal Price { get; set; }
+        public byte[] ProductImage { get; set; }
 
         // Cart - CartItem - Product
         // Product(1) : CartItem(N) | Product(N) : Cart(M)
