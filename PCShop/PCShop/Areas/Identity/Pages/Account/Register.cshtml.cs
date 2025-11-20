@@ -1,7 +1,4 @@
-﻿// Licensed to the .NET Foundation under one or more agreements.
-// The .NET Foundation licenses this file to you under the MIT license.
-#nullable disable
-
+﻿#nullable disable
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -35,7 +32,7 @@ namespace PCShop.Areas.Identity.Pages.Account
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
         private readonly RoleManager<IdentityRole<int>> _roleManager;
-        private readonly PCShopContext _context;   // DbContext-ul aplicației
+        private readonly PCShopContext _context;   
 
         public RegisterModel(
             UserManager<User> userManager,
@@ -44,7 +41,7 @@ namespace PCShop.Areas.Identity.Pages.Account
             ILogger<RegisterModel> logger,
             IEmailSender emailSender,
             RoleManager<IdentityRole<int>> roleManager,
-            PCShopContext context)   // folosim PCShopContext
+            PCShopContext context)  
         {
             _userManager = userManager;
             _userStore = userStore;
@@ -119,16 +116,13 @@ namespace PCShop.Areas.Identity.Pages.Account
 
             var user = CreateUser();
 
-            // Username + Email pentru Identity
             await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
             await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);
 
-            // Proprietăți custom
             user.FirstName = Input.FirstName;
             user.LastName = Input.LastName;
             user.ContactNumber = Input.ContactNumber;
 
-            // Avatar -> byte[]
             if (Input.AvatarImage != null)
             {
                 using var ms = new MemoryStream();
@@ -149,10 +143,8 @@ namespace PCShop.Areas.Identity.Pages.Account
                     await _userManager.AddToRoleAsync(user, role.Name);
                 }
 
-                // folosim Id-ul userului pentru CartId & WishlistId
                 var userId = user.Id;
-
-                // Creăm Cart: CartId = UserId
+               
                 var cart = new Cart
                 {
                     CartId = userId,
@@ -160,19 +152,18 @@ namespace PCShop.Areas.Identity.Pages.Account
                     CartItems = new List<CartItem>()
                 };
 
-                // Creăm Wishlist: WishlistId = UserId
+              
                 var wishlist = new Wishlist
                 {
                     WishlistId = userId,
                     UserId = userId
-                    // ProductId rămâne implicit; userul va adăuga produse ulterior
+                  
                 };
 
                 _context.Carts.Add(cart);
                 _context.Wishlists.Add(wishlist);
                 await _context.SaveChangesAsync();
 
-                // Confirmare email (standard Identity)
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 code = WebEncoders.Base64UrlEncode(Encoding.UTF8.GetBytes(code));
 
@@ -196,7 +187,6 @@ namespace PCShop.Areas.Identity.Pages.Account
                 return LocalRedirect(returnUrl);
             }
 
-            // erori Identity (parolă slabă, email duplicat, etc.)
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError(string.Empty, error.Description);
