@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PCShop.Models;
@@ -11,9 +12,11 @@ using PCShop.Models;
 namespace PCShop.Migrations
 {
     [DbContext(typeof(PCShopContext))]
-    partial class PCShopContextModelSnapshot : ModelSnapshot
+    [Migration("20251120094810_Remove Email and Password field from User model")]
+    partial class RemoveEmailandPasswordfieldfromUsermodel
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -480,7 +483,7 @@ namespace PCShop.Migrations
 
                     NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("WishlistId"));
 
-                    b.Property<int?>("ProductId")
+                    b.Property<int>("ProductId")
                         .HasColumnType("integer");
 
                     b.Property<int>("UserId")
@@ -656,7 +659,9 @@ namespace PCShop.Migrations
                 {
                     b.HasOne("PCShop.Models.Product", "Product")
                         .WithMany("Wishlists")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
                     b.HasOne("PCShop.Models.User", "User")
                         .WithMany("Wishlists")

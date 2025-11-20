@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 using PCShop.Models;
@@ -11,9 +12,11 @@ using PCShop.Models;
 namespace PCShop.Migrations
 {
     [DbContext(typeof(PCShopContext))]
-    partial class PCShopContextModelSnapshot : ModelSnapshot
+    [Migration("20251120102421_modify idproduct in wishlist")]
+    partial class modifyidproductinwishlist
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

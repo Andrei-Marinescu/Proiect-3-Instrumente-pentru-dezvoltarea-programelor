@@ -11,7 +11,7 @@ namespace PCShop.Models
         [ForeignKey("UserId")]
         public User User { get; set; }
 
-        public int ProductId { get; set; }
+        public int? ProductId { get; set; }
         [ForeignKey("ProductId")]
         public Product Product { get; set; }
     }
