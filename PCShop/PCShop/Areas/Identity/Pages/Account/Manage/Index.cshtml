@@ -1,27 +1,152 @@
 ﻿@page
 @model IndexModel
 @{
-    ViewData["Title"] = "Profile";
+    ViewData["Title"] = "Profilul Meu";
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
 <h3>@ViewData["Title"]</h3>
 <partial name="_StatusMessage" for="StatusMessage" />
+
 <div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger" role="alert"></div>
-            <div class="form-floating mb-3">
-                <input asp-for="Username" class="form-control" placeholder="Please choose your username." disabled />
-                <label asp-for="Username" class="form-label"></label>
+    <div class="col-lg-6 mb-5">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-white fw-bold">Date Personale</div>
+            <div class="card-body">
+                <form id="profile-form" method="post" enctype="multipart/form-data">
+
+                    <div class="text-center mb-4">
+                        @if (Model.ExistingProfilePicture != null && Model.ExistingProfilePicture.Length > 0)
+                        {
+                            <img src="data:image/*;base64,@(Convert.ToBase64String(Model.ExistingProfilePicture))"
+                                 class="rounded-circle img-thumbnail mb-3"
+                                 style="width: 120px; height: 120px; object-fit: cover;" />
+                        }
+                        else
+                        {
+                            <img src="https://via.placeholder.com/120?text=User"
+                                 class="rounded-circle img-thumbnail mb-3" />
+                        }
+
+                        <div class="input-group input-group-sm mb-3">
+                            <label class="input-group-text" for="avatarUpload">Upload</label>
+                            <input type="file" class="form-control" id="avatarUpload" asp-for="Input.ProfilePicture" accept=".png,.jpg,.jpeg">
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Username" class="form-control" disabled />
+                        <label asp-for="Username">Email</label>
+                    </div>
+
+                    <div class="row g-2 mb-3">
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input asp-for="Input.FirstName" class="form-control" placeholder="First Name" />
+                                <label asp-for="Input.FirstName"></label>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-floating">
+                                <input asp-for="Input.LastName" class="form-control" placeholder="Last Name" />
+                                <label asp-for="Input.LastName"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-floating mb-3">
+                        <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Phone" />
+                        <label asp-for="Input.PhoneNumber"></label>
+                    </div>
+
+                    <button id="update-profile-button" type="submit" class="btn btn-primary w-100">
+                        Salveaza Modificarile Profilului
+                    </button>
+                </form>
             </div>
-            <div class="form-floating mb-3">
-                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Please enter your phone number."/>
-                <label asp-for="Input.PhoneNumber" class="form-label"></label>
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+        </div>
+    </div>
+
+    <div class="col-lg-6 mb-5">
+        <div class="card shadow-sm border-0 h-100">
+            <div class="card-header bg-white fw-bold d-flex justify-content-between align-items-center">
+                <span>Adresele Mele</span>
+                <span class="badge bg-secondary">@Model.ExistingAddresses?.Count</span>
             </div>
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
-        </form>
+            <div class="card-body d-flex flex-column">
+
+                @if (Model.ExistingAddresses != null && Model.ExistingAddresses.Any())
+                {
+                    <div class="list-group mb-4 overflow-auto" style="max-height: 300px;">
+                        @foreach (var addr in Model.ExistingAddresses)
+                        {
+                            <div class="list-group-item d-flex justify-content-between align-items-center">
+                                <div>
+                                    <i class="bi bi-geo-alt-fill text-danger me-2"></i>
+                                    <strong>@addr.City</strong>, @addr.Street
+                                    <br>
+                                    <small class="text-muted">
+                                        Bloc: @(addr.ApartmentBlock ?? "-"), Ap: @addr.ApartmentNumber
+                                    </small>
+                                </div>
+
+                                <form method="post" asp-page-handler="DeleteAddress" asp-route-addressId="@addr.AdressId">
+                                    <button type="submit" class="btn btn-sm btn-outline-danger" title="Șterge">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </form>
+                            </div>
+                        }
+                    </div>
+                }
+                else
+                {
+                    <div class="alert alert-light text-center">
+                        Nu ai adaugat nicio adresa.
+                    </div>
+                }
+
+                <hr class="mt-auto" />
+
+                <h6 class="fw-bold mb-3"><i class="bi bi-plus-circle"></i> Adauga Adresa Noua</h6>
+
+                <form method="post" asp-page-handler="AddAddress">
+                    <div class="row g-2 mb-2">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input asp-for="AddressInput.City" class="form-control" placeholder="Oras" required />
+                                <label asp-for="AddressInput.City"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input asp-for="AddressInput.Street" class="form-control" placeholder="Strada" required />
+                                <label asp-for="AddressInput.Street"></label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row g-2 mb-3">
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input asp-for="AddressInput.ApartmentBlock" class="form-control" placeholder="Bloc" />
+                                <label asp-for="AddressInput.ApartmentBlock"></label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating">
+                                <input asp-for="AddressInput.ApartmentNumber" class="form-control" placeholder="Ap" type="number" />
+                                <label asp-for="AddressInput.ApartmentNumber"></label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">
+                        Salveaza Adresa
+                    </button>
+                </form>
+
+            </div>
+        </div>
     </div>
 </div>
 
