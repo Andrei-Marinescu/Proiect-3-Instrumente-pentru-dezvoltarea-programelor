@@ -11,6 +11,6 @@ namespace PCShop.Models
         public string ApartmentBlock { get; set; }
         public int ApartmentNumber {  get; set; }
         // Adress(1) : UserAdress(N)
-        public ICollection<UserAdress> UserAdresses { get; set; }
+        public ICollection<UserAdress>? UserAdresses { get; set; }
     }
 }

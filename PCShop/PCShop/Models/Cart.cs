@@ -12,6 +12,6 @@ namespace PCShop.Models
         [ForeignKey("UserId")]
         public User User { get; set; }
         // Cart(1) : CartItems(N) | Cart(N) : Product(M)
-        public ICollection<CartItem> CartItems { get; set; }
+        public ICollection<CartItem>? CartItems { get; set; }
     }
 }

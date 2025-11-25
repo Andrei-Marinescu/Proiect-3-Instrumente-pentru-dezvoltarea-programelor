@@ -9,6 +9,6 @@ namespace PCShop.Models
         public string Name { get; set; }
 
         // Provider(1) - Produts(N)
-        public ICollection<Product> Products { get; set; }
+        public ICollection<Product>? Products { get; set; }
     }
 }

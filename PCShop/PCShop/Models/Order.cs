@@ -21,6 +21,6 @@ namespace PCShop.Models
         public Address Address { get; set; }
 
         // Order(1) : OrderItem(N) | Order(N) : Product(M)
-        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<OrderItem>? OrderItems { get; set; }
     }
 }

@@ -1,60 +1,106 @@
 ﻿@model PCShop.Models.Product
+@using Microsoft.AspNetCore.Identity
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = Model.Name;
 }
 
-<h1>Details</h1>
+<div class="container my-5">
+    <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a asp-action="Index" class="text-decoration-none">Produse</a></li>
+            <li class="breadcrumb-item"><a href="#" class="text-decoration-none">@Model.Category?.Name</a></li>
+            <li class="breadcrumb-item active" aria-current="page">@Model.Name</li>
+        </ol>
+    </nav>
 
-<div>
-    <h4>Product</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Name)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Name)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.QuantityAvailable)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.QuantityAvailable)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Price)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Price)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.ProductImage)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.ProductImage)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Provider)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Provider.ProviderId)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.Category)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Category.CategoryId)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model?.ProductId">Edit</a> |
-    <a asp-action="Index">Back to List</a>
+    <div class="row g-5">
+        <div class="col-md-6 mb-4">
+            <div class="card border-0 shadow-sm p-3">
+                <div class="bg-white text-center overflow-hidden" style="border-radius: 10px;">
+                    <img src="@(string.IsNullOrEmpty(Model.ProductImage) ? "https://via.placeholder.com/600x600?text=No+Image" : Model.ProductImage)"
+                         class="img-fluid"
+                         alt="@Model.Name"
+                         style="max-height: 500px; object-fit: contain;">
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="ps-lg-4">
+                <div class="mb-2">
+                    <span class="badge bg-secondary">@Model.Category?.Name</span>
+                    <span class="text-muted ms-2"><i class="bi bi-box-seam"></i> Furnizor: @Model.Provider?.Name</span>
+                </div>
+
+                <h1 class="display-5 fw-bold text-dark mb-3">@Model.Name</h1>
+
+                <div class="mb-3">
+                    <span class="display-6 text-primary fw-bold">@Model.Price RON</span>
+                </div>
+
+                <div class="mb-4">
+                    @if (Model.QuantityAvailable > 5)
+                    {
+                        <span class="badge bg-success p-2 fs-6"><i class="bi bi-check-circle-fill"></i> În Stoc</span>
+                    }
+                    else if (Model.QuantityAvailable > 0)
+                    {
+                        <span class="badge bg-warning text-dark p-2 fs-6"><i class="bi bi-exclamation-circle-fill"></i> Stoc Limitat (@Model.QuantityAvailable buc.)</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger p-2 fs-6"><i class="bi bi-x-circle-fill"></i> Stoc Epuizat</span>
+                    }
+                </div>
+
+                <p class="lead text-muted fs-6 mb-4">
+                    @Model.Description
+                </p>
+
+                <hr class="my-4">
+
+                <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+
+                    @if (Model.QuantityAvailable > 0 && !User.IsInRole("Admin"))
+                    {
+                        <a asp-controller="Carts"
+                           asp-action="AddToCart"
+                           asp-route-productId="@Model.ProductId"
+                           class="btn btn-success btn-lg px-4 shadow-sm me-md-2">
+                            <i class="bi bi-cart-plus-fill"></i> Adauga in cos
+                        </a>
+                    }
+
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <a asp-action="Edit" asp-route-id="@Model.ProductId" class="btn btn-warning btn-lg px-4 me-md-2">
+                            <i class="bi bi-pencil-square"></i> Editeaza
+                        </a>
+
+                        <a asp-action="Delete" asp-route-id="@Model.ProductId" class="btn btn-outline-danger btn-lg px-4">
+                            <i class="bi bi-trash"></i> Sterge
+                        </a>
+                    }
+
+                    <a asp-action="Index" class="btn btn-outline-secondary btn-lg px-4">
+                        Inapoi la Lista
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card shadow-sm border-0">
+                <div class="card-header bg-light fw-bold">
+                    Specificatii Tehnice & Detalii
+                </div>
+                <div class="card-body">
+                    <p class="text-muted">ID Produs intern: #@Model.ProductId</p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

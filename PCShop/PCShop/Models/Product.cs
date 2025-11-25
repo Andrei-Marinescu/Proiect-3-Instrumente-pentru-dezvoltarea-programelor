@@ -10,27 +10,27 @@ namespace PCShop.Models
         public string Description { get; set; }
         public int QuantityAvailable { get; set; }
         public decimal Price { get; set; }
-        public byte[] ProductImage { get; set; }
+        public string ProductImage { get; set; }
 
         // Cart - CartItem - Product
         // Product(1) : CartItem(N) | Product(N) : Cart(M)
-        public ICollection<CartItem> CartItems { get; set; }
+        public ICollection<CartItem>? CartItems { get; set; }
 
 
         // Order - OrderItem - Product
         // Product(1) : OrderItem(N) | Product(N) : Order(M)
-        public ICollection<OrderItem> OrderItems { get; set; }
+        public ICollection<OrderItem>? OrderItems { get; set; }
 
         // Product(1) : Wishlist(N)
-        public ICollection<Wishlist> Wishlists { get; set; }
+        public ICollection<Wishlist>? Wishlists { get; set; }
 
         public int ProviderId { get; set; }
         [ForeignKey("ProviderId")]
-        public Provider Provider { get; set; }
+        public Provider? Provider { get; set; }
 
         public int CategoryId { get; set; }
         [ForeignKey("CategoryId")]
-        public Category Category { get; set; }
+        public Category? Category { get; set; }
         
     }
 }

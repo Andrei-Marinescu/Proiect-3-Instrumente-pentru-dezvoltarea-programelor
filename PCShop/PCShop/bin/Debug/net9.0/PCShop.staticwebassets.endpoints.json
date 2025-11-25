@@ -8832,6 +8832,416 @@
       ]
     },
     {
+      "Route": "css/Images/CPU/AMD/Ryzen 5 5600X.6zdohnuftm.png",
+      "AssetFile": "css/Images/CPU/AMD/Ryzen 5 5600X.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69735"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wmmYp7reFbwZlOUH5EB1U9QrpZFC+gSjPeXcD6YOYy8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 08:58:31 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "6zdohnuftm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-wmmYp7reFbwZlOUH5EB1U9QrpZFC+gSjPeXcD6YOYy8="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Images/CPU/AMD/Ryzen 5 5600X.png"
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/CPU/AMD/Ryzen 5 5600X.png",
+      "AssetFile": "css/Images/CPU/AMD/Ryzen 5 5600X.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "69735"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"wmmYp7reFbwZlOUH5EB1U9QrpZFC+gSjPeXcD6YOYy8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 08:58:31 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-wmmYp7reFbwZlOUH5EB1U9QrpZFC+gSjPeXcD6YOYy8="
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/CPU/Intel/I7 14700k.l6vwrrw6hq.png",
+      "AssetFile": "css/Images/CPU/Intel/I7 14700k.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14446"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3Sy7r2DxBwgO+FkK3XY4p9GfgbV5+Nqccr75ogAlzcA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:30:34 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "l6vwrrw6hq"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3Sy7r2DxBwgO+FkK3XY4p9GfgbV5+Nqccr75ogAlzcA="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Images/CPU/Intel/I7 14700k.png"
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/CPU/Intel/I7 14700k.png",
+      "AssetFile": "css/Images/CPU/Intel/I7 14700k.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14446"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3Sy7r2DxBwgO+FkK3XY4p9GfgbV5+Nqccr75ogAlzcA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:30:34 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3Sy7r2DxBwgO+FkK3XY4p9GfgbV5+Nqccr75ogAlzcA="
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/GPU/Asus/RTX4070.4conmslswm.png",
+      "AssetFile": "css/Images/GPU/Asus/RTX4070.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:33:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "4conmslswm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-9PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Images/GPU/Asus/RTX4070.png"
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/GPU/Asus/RTX4070.png",
+      "AssetFile": "css/Images/GPU/Asus/RTX4070.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "50962"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"9PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:33:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-9PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0="
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/GPU/MSI/RTX5080.fiy9uit3cm.png",
+      "AssetFile": "css/Images/GPU/MSI/RTX5080.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "406309"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:35:29 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "fiy9uit3cm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Images/GPU/MSI/RTX5080.png"
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/GPU/MSI/RTX5080.png",
+      "AssetFile": "css/Images/GPU/MSI/RTX5080.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "406309"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:35:29 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910="
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/PSU/Corsair/CX750.c5tcjfyeys.png",
+      "AssetFile": "css/Images/PSU/Corsair/CX750.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15348"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cLKWWJ+HkBzD1pLn+tlzS4PtkIl21hGR5FA506hFCaI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:41:43 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c5tcjfyeys"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cLKWWJ+HkBzD1pLn+tlzS4PtkIl21hGR5FA506hFCaI="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Images/PSU/Corsair/CX750.png"
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/PSU/Corsair/CX750.png",
+      "AssetFile": "css/Images/PSU/Corsair/CX750.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "15348"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cLKWWJ+HkBzD1pLn+tlzS4PtkIl21hGR5FA506hFCaI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Fri, 21 Nov 2025 11:41:43 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cLKWWJ+HkBzD1pLn+tlzS4PtkIl21hGR5FA506hFCaI="
+        }
+      ]
+    },
+    {
       "Route": "css/site.b9sayid5wm.css",
       "AssetFile": "css/site.css.gz",
       "Selectors": [

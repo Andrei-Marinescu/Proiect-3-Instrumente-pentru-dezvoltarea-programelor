@@ -1,5 +1,65 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/CPU/AMD/Ryzen 5 5600X.6zdohnuftm.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\CPU\AMD\Ryzen 5 5600X.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"6zdohnuftm"},{"Name":"integrity","Value":"sha256-wmmYp7reFbwZlOUH5EB1U9QrpZFC\u002BgSjPeXcD6YOYy8="},{"Name":"label","Value":"_content/PCShop/css/Images/CPU/AMD/Ryzen 5 5600X.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"69735"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022wmmYp7reFbwZlOUH5EB1U9QrpZFC\u002BgSjPeXcD6YOYy8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 08:58:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/CPU/AMD/Ryzen 5 5600X.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\CPU\AMD\Ryzen 5 5600X.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-wmmYp7reFbwZlOUH5EB1U9QrpZFC\u002BgSjPeXcD6YOYy8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"69735"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022wmmYp7reFbwZlOUH5EB1U9QrpZFC\u002BgSjPeXcD6YOYy8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 08:58:31 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/CPU/Intel/I7 14700k.l6vwrrw6hq.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\CPU\Intel\I7 14700k.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"l6vwrrw6hq"},{"Name":"integrity","Value":"sha256-3Sy7r2DxBwgO\u002BFkK3XY4p9GfgbV5\u002BNqccr75ogAlzcA="},{"Name":"label","Value":"_content/PCShop/css/Images/CPU/Intel/I7 14700k.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14446"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00223Sy7r2DxBwgO\u002BFkK3XY4p9GfgbV5\u002BNqccr75ogAlzcA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:30:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/CPU/Intel/I7 14700k.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\CPU\Intel\I7 14700k.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-3Sy7r2DxBwgO\u002BFkK3XY4p9GfgbV5\u002BNqccr75ogAlzcA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"14446"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00223Sy7r2DxBwgO\u002BFkK3XY4p9GfgbV5\u002BNqccr75ogAlzcA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:30:34 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/GPU/Asus/RTX4070.4conmslswm.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\GPU\Asus\RTX4070.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4conmslswm"},{"Name":"integrity","Value":"sha256-9PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0="},{"Name":"label","Value":"_content/PCShop/css/Images/GPU/Asus/RTX4070.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"50962"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00229PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:33:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/GPU/Asus/RTX4070.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\GPU\Asus\RTX4070.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-9PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"50962"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u00229PARHH9hejgtZx3Ys1viV4/zp2EoGHpuA/bffWKvMz0=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:33:41 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/GPU/MSI/RTX5080.fiy9uit3cm.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\GPU\MSI\RTX5080.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"fiy9uit3cm"},{"Name":"integrity","Value":"sha256-CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910="},{"Name":"label","Value":"_content/PCShop/css/Images/GPU/MSI/RTX5080.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"406309"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:35:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/GPU/MSI/RTX5080.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\GPU\MSI\RTX5080.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"406309"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022CfOk0nNrHhn0tNH83fZWJ5BlYtSmNY/JkfLK/uR3910=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:35:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/PSU/Corsair/CX750.c5tcjfyeys.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\PSU\Corsair\CX750.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c5tcjfyeys"},{"Name":"integrity","Value":"sha256-cLKWWJ\u002BHkBzD1pLn\u002BtlzS4PtkIl21hGR5FA506hFCaI="},{"Name":"label","Value":"_content/PCShop/css/Images/PSU/Corsair/CX750.png"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"15348"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022cLKWWJ\u002BHkBzD1pLn\u002BtlzS4PtkIl21hGR5FA506hFCaI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:41:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/css/Images/PSU/Corsair/CX750.png">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Images\PSU\Corsair\CX750.png'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-cLKWWJ\u002BHkBzD1pLn\u002BtlzS4PtkIl21hGR5FA506hFCaI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"15348"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022cLKWWJ\u002BHkBzD1pLn\u002BtlzS4PtkIl21hGR5FA506hFCaI=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Nov 2025 11:41:43 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/PCShop/css/site.b9sayid5wm.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

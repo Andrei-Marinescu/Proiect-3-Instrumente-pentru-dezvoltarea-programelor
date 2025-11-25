@@ -19,12 +19,23 @@ namespace PCShop.Controllers
         }
 
         // GET: Products
-        public async Task<IActionResult> Index()
+       
+        public async Task<IActionResult> Index(int? categoryId)
         {
-            var pCShopContext = _context.Products.Include(p => p.Category).Include(p => p.Provider);
-            return View(await pCShopContext.ToListAsync());
-        }
+            var productsQuery = _context.Products
+                .Include(p => p.Category)
+                .Include(p => p.Provider)
+                .AsQueryable();
 
+            if (categoryId.HasValue)
+            {
+                productsQuery = productsQuery.Where(p => p.CategoryId == categoryId);
+            }
+
+            ViewData["Categories"] = new SelectList(_context.Categories, "CategoryId", "Name", categoryId);
+
+            return View(await productsQuery.ToListAsync());
+        }
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -37,6 +48,7 @@ namespace PCShop.Controllers
                 .Include(p => p.Category)
                 .Include(p => p.Provider)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
+
             if (product == null)
             {
                 return NotFound();
@@ -48,8 +60,8 @@ namespace PCShop.Controllers
         // GET: Products/Create
         public IActionResult Create()
         {
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId");
-            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "ProviderId");
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
+            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name");
             return View();
         }
 
@@ -66,8 +78,8 @@ namespace PCShop.Controllers
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", product.CategoryId);
-            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "ProviderId", product.ProviderId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
+            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name");
             return View(product);
         }
 
@@ -84,8 +96,8 @@ namespace PCShop.Controllers
             {
                 return NotFound();
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", product.CategoryId);
-            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "ProviderId", product.ProviderId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
+            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name");
             return View(product);
         }
 
@@ -121,8 +133,8 @@ namespace PCShop.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "CategoryId", product.CategoryId);
-            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "ProviderId", product.ProviderId);
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
+            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name");
             return View(product);
         }
 

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -9,139 +11,93 @@ using PCShop.Models;
 
 namespace PCShop.Controllers
 {
+    [Authorize]
     public class WishlistsController : Controller
     {
         private readonly PCShopContext _context;
+        private readonly UserManager<User> _userManager;
 
-        public WishlistsController(PCShopContext context)
+        public WishlistsController(PCShopContext context, UserManager<User> userManager)
         {
             _context = context;
+            _userManager = userManager;
         }
 
-        // GET: Wishlists
         public async Task<IActionResult> Index()
         {
-            var pCShopContext = _context.Wishlists.Include(w => w.Product).Include(w => w.User);
-            return View(await pCShopContext.ToListAsync());
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Login", "Account");
+
+            var myWishlist = await _context.Wishlists
+                .Include(w => w.Product)
+                    .ThenInclude(p => p.Category) 
+                .Include(w => w.Product)
+                    .ThenInclude(p => p.Provider) 
+                .Where(w => w.UserId == user.Id)
+                .ToListAsync();
+
+            return View(myWishlist);
         }
 
         // GET: Wishlists/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var wishlist = await _context.Wishlists
                 .Include(w => w.Product)
                 .Include(w => w.User)
                 .FirstOrDefaultAsync(m => m.WishlistId == id);
-            if (wishlist == null)
-            {
-                return NotFound();
-            }
+
+            if (wishlist == null) return NotFound();
+
+            var user = await _userManager.GetUserAsync(User);
+            if (wishlist.UserId != user.Id) return Forbid();
 
             return View(wishlist);
         }
 
-        // GET: Wishlists/Create
-        public IActionResult Create()
+        public async Task<IActionResult> ToggleWishlist(int productId)
         {
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId");
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id");
-            return View();
-        }
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null) return RedirectToAction("Login", "Account");
 
-        // POST: Wishlists/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("WishlistId,UserId,ProductId")] Wishlist wishlist)
-        {
-            if (ModelState.IsValid)
+            var existingItem = await _context.Wishlists
+                .FirstOrDefaultAsync(w => w.UserId == user.Id && w.ProductId == productId);
+
+            if (existingItem != null)
             {
-                _context.Add(wishlist);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                _context.Wishlists.Remove(existingItem);
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", wishlist.ProductId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", wishlist.UserId);
-            return View(wishlist);
-        }
-
-        // GET: Wishlists/Edit/5
-        public async Task<IActionResult> Edit(int? id)
-        {
-            if (id == null)
+            else
             {
-                return NotFound();
-            }
-
-            var wishlist = await _context.Wishlists.FindAsync(id);
-            if (wishlist == null)
-            {
-                return NotFound();
-            }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", wishlist.ProductId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", wishlist.UserId);
-            return View(wishlist);
-        }
-
-        // POST: Wishlists/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("WishlistId,UserId,ProductId")] Wishlist wishlist)
-        {
-            if (id != wishlist.WishlistId)
-            {
-                return NotFound();
-            }
-
-            if (ModelState.IsValid)
-            {
-                try
+                var newItem = new Wishlist
                 {
-                    _context.Update(wishlist);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!WishlistExists(wishlist.WishlistId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
-                return RedirectToAction(nameof(Index));
+                    UserId = user.Id,
+                    ProductId = productId
+                };
+                _context.Wishlists.Add(newItem);
             }
-            ViewData["ProductId"] = new SelectList(_context.Products, "ProductId", "ProductId", wishlist.ProductId);
-            ViewData["UserId"] = new SelectList(_context.Users, "Id", "Id", wishlist.UserId);
-            return View(wishlist);
+
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction(nameof(Index));
         }
 
         // GET: Wishlists/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var wishlist = await _context.Wishlists
                 .Include(w => w.Product)
                 .Include(w => w.User)
                 .FirstOrDefaultAsync(m => m.WishlistId == id);
-            if (wishlist == null)
-            {
-                return NotFound();
-            }
+
+            if (wishlist == null) return NotFound();
+
+            var user = await _userManager.GetUserAsync(User);
+            if (wishlist.UserId != user.Id) return Forbid();
 
             return View(wishlist);
         }
@@ -152,18 +108,38 @@ namespace PCShop.Controllers
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var wishlist = await _context.Wishlists.FindAsync(id);
-            if (wishlist != null)
+
+            var user = await _userManager.GetUserAsync(User);
+            if (wishlist != null && wishlist.UserId == user.Id)
             {
                 _context.Wishlists.Remove(wishlist);
+                await _context.SaveChangesAsync();
             }
 
-            await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool WishlistExists(int id)
         {
             return _context.Wishlists.Any(e => e.WishlistId == id);
+        }
+        public async Task<IActionResult> Remove(int id)
+        {
+            var wishlistItem = await _context.Wishlists.FindAsync(id);
+
+            if (wishlistItem != null)
+            {
+
+                var user = await _userManager.GetUserAsync(User);
+
+                if (user != null && wishlistItem.UserId == user.Id)
+                {
+                    _context.Wishlists.Remove(wishlistItem);
+                    await _context.SaveChangesAsync();
+                }
+            }
+
+            return RedirectToAction(nameof(Index));
         }
     }
 }
