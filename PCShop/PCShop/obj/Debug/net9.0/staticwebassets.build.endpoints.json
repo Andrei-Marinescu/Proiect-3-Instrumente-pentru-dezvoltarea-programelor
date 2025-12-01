@@ -8534,13 +8534,174 @@
       ]
     },
     {
+      "Route": "PCShop.k40t7x9p1a.styles.css",
+      "AssetFile": "PCShop.styles.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001798561151"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rOop4gTa0Md5rxfHNXVHh1HrlNbWa1brZ1pBu2HNINs=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 08:39:41 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k40t7x9p1a"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs="
+        },
+        {
+          "Name": "label",
+          "Value": "PCShop.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "PCShop.k40t7x9p1a.styles.css",
+      "AssetFile": "PCShop.styles.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1186"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 08:39:41 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k40t7x9p1a"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs="
+        },
+        {
+          "Name": "label",
+          "Value": "PCShop.styles.css"
+        }
+      ]
+    },
+    {
+      "Route": "PCShop.k40t7x9p1a.styles.css.gz",
+      "AssetFile": "PCShop.styles.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "555"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"rOop4gTa0Md5rxfHNXVHh1HrlNbWa1brZ1pBu2HNINs=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 08:39:41 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k40t7x9p1a"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-rOop4gTa0Md5rxfHNXVHh1HrlNbWa1brZ1pBu2HNINs="
+        },
+        {
+          "Name": "label",
+          "Value": "PCShop.styles.css.gz"
+        }
+      ]
+    },
+    {
       "Route": "PCShop.styles.css",
       "AssetFile": "PCShop.styles.css.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.001848428835"
+          "Quality": "0.001798561151"
         }
       ],
       "ResponseHeaders": [
@@ -8558,7 +8719,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "540"
+          "Value": "555"
         },
         {
           "Name": "Content-Type",
@@ -8566,15 +8727,15 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ejoid2hHCGgUzHTSANchAPJubGeALJzZWPEU2ij8nNk=\""
+          "Value": "\"rOop4gTa0Md5rxfHNXVHh1HrlNbWa1brZ1pBu2HNINs=\""
         },
         {
           "Name": "ETag",
-          "Value": "W/\"t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU=\""
+          "Value": "W/\"5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 14 Nov 2025 11:03:04 GMT"
+          "Value": "Thu, 27 Nov 2025 08:39:41 GMT"
         },
         {
           "Name": "Vary",
@@ -8584,7 +8745,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU="
+          "Value": "sha256-5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs="
         }
       ]
     },
@@ -8603,7 +8764,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1124"
+          "Value": "1186"
         },
         {
           "Name": "Content-Type",
@@ -8611,17 +8772,17 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU=\""
+          "Value": "\"5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 14 Nov 2025 11:03:04 GMT"
+          "Value": "Thu, 27 Nov 2025 08:39:41 GMT"
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU="
+          "Value": "sha256-5ABsjhpr00YThSv/0+kdCK3IxYLe1lBv/qGy85jpYMs="
         }
       ]
     },
@@ -8644,7 +8805,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "540"
+          "Value": "555"
         },
         {
           "Name": "Content-Type",
@@ -8652,11 +8813,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ejoid2hHCGgUzHTSANchAPJubGeALJzZWPEU2ij8nNk=\""
+          "Value": "\"rOop4gTa0Md5rxfHNXVHh1HrlNbWa1brZ1pBu2HNINs=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 14 Nov 2025 11:03:04 GMT"
+          "Value": "Thu, 27 Nov 2025 08:39:41 GMT"
         },
         {
           "Name": "Vary",
@@ -8666,168 +8827,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ejoid2hHCGgUzHTSANchAPJubGeALJzZWPEU2ij8nNk="
-        }
-      ]
-    },
-    {
-      "Route": "PCShop.tf92729xg7.styles.css",
-      "AssetFile": "PCShop.styles.css.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.001848428835"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "540"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ejoid2hHCGgUzHTSANchAPJubGeALJzZWPEU2ij8nNk=\""
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 14 Nov 2025 11:03:04 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tf92729xg7"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU="
-        },
-        {
-          "Name": "label",
-          "Value": "PCShop.styles.css"
-        }
-      ]
-    },
-    {
-      "Route": "PCShop.tf92729xg7.styles.css",
-      "AssetFile": "PCShop.styles.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1124"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 14 Nov 2025 11:03:04 GMT"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tf92729xg7"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-t+RLHRu2jjWaAlxFEuNIhOZxB6W+pQfJsjSTcQvpFyU="
-        },
-        {
-          "Name": "label",
-          "Value": "PCShop.styles.css"
-        }
-      ]
-    },
-    {
-      "Route": "PCShop.tf92729xg7.styles.css.gz",
-      "AssetFile": "PCShop.styles.css.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "540"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"ejoid2hHCGgUzHTSANchAPJubGeALJzZWPEU2ij8nNk=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 14 Nov 2025 11:03:04 GMT"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "tf92729xg7"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-ejoid2hHCGgUzHTSANchAPJubGeALJzZWPEU2ij8nNk="
-        },
-        {
-          "Name": "label",
-          "Value": "PCShop.styles.css.gz"
+          "Value": "sha256-rOop4gTa0Md5rxfHNXVHh1HrlNbWa1brZ1pBu2HNINs="
         }
       ]
     },
@@ -9238,6 +9238,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-cLKWWJ+HkBzD1pLn+tlzS4PtkIl21hGR5FA506hFCaI="
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/RAM/Kingstone/Kingstone16GB3200MHZ.ou13pp3rny.png",
+      "AssetFile": "css/Images/RAM/Kingstone/Kingstone16GB3200MHZ.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26665"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4CY2km9XNcemZ4b1KUwJbO9V2J93x8XYXzPqFOMlpBk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 18:11:22 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ou13pp3rny"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4CY2km9XNcemZ4b1KUwJbO9V2J93x8XYXzPqFOMlpBk="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Images/RAM/Kingstone/Kingstone16GB3200MHZ.png"
+        }
+      ]
+    },
+    {
+      "Route": "css/Images/RAM/Kingstone/Kingstone16GB3200MHZ.png",
+      "AssetFile": "css/Images/RAM/Kingstone/Kingstone16GB3200MHZ.png",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "26665"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "image/png"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4CY2km9XNcemZ4b1KUwJbO9V2J93x8XYXzPqFOMlpBk=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 27 Nov 2025 18:11:22 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4CY2km9XNcemZ4b1KUwJbO9V2J93x8XYXzPqFOMlpBk="
         }
       ]
     },

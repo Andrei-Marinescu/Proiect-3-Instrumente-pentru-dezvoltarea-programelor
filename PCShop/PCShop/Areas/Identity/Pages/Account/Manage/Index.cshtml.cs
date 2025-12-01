@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore; // NECESAR pentru .Include
+using Microsoft.EntityFrameworkCore; 
 using PCShop.Models;
 
 namespace PCShop.Areas.Identity.Pages.Account.Manage
@@ -17,7 +17,7 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly PCShopContext _context; // 1. Injectam Contextul Bazei de date
+        private readonly PCShopContext _context; 
 
         public IndexModel(
             UserManager<User> userManager,
@@ -36,13 +36,11 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
 
         public byte[] ExistingProfilePicture { get; set; }
 
-        // Lista de adrese pentru afisare
         public IList<Address> ExistingAddresses { get; set; }
 
         [BindProperty]
         public InputModel Input { get; set; }
 
-        // Model separat pentru Adresa (ca sa nu se incurce validarea cu profilul)
         [BindProperty]
         public AddressInputModel AddressInput { get; set; }
 
@@ -64,17 +62,17 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
         public class AddressInputModel
         {
             [Required(ErrorMessage = "Orașul este obligatoriu")]
-            [Display(Name = "Oraș")]
+            [Display(Name = "Oras")]
             public string City { get; set; }
 
             [Required(ErrorMessage = "Strada este obligatorie")]
-            [Display(Name = "Stradă")]
+            [Display(Name = "Strada")]
             public string Street { get; set; }
 
             [Display(Name = "Bloc")]
             public string ApartmentBlock { get; set; }
 
-            [Display(Name = "Număr Apartament")]
+            [Display(Name = "Numar Apartament")]
             public int ApartmentNumber { get; set; }
         }
 
@@ -86,7 +84,6 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
             Username = userName;
             ExistingProfilePicture = user.AvatarImage;
 
-            // Incarcam datele profilului
             Input = new InputModel
             {
                 PhoneNumber = phoneNumber,
@@ -94,8 +91,6 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
                 LastName = user.LastName
             };
 
-            // Incarcam lista de adrese
-            // Navigam prin tabela de legatura UserAdress -> Address
             ExistingAddresses = await _context.UserAdresses
                 .Where(ua => ua.UserId == user.Id)
                 .Select(ua => ua.Address)
@@ -111,15 +106,11 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
             return Page();
         }
 
-        // HANDLER 1: Actualizare Profil (Default)
+
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return NotFound($"Unable to load user with ID '{_userManager.GetUserId(User)}'.");
-
-            // Validam DOAR Input-ul de profil, ignoram erorile de la AddressInput daca sunt goale
-            // Dar aici ModelState va valida tot ce e [BindProperty].
-            // Putem verifica manual sau ignora erorile specifice adresei.
 
             bool hasChanges = false;
 
@@ -163,28 +154,24 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
             }
             else
             {
-                StatusMessage = "Nu au fost detectate modificări la profil.";
+                StatusMessage = "Nu au fost detectate modificari la profil.";
             }
 
             return RedirectToPage();
         }
 
-        // HANDLER 2: Adaugare Adresa
-        // Aceasta metoda se apeleaza cand formularul are asp-page-handler="AddAddress"
         public async Task<IActionResult> OnPostAddAddressAsync()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return NotFound("User not found");
 
-            // Validare simpla manuala pentru adresa
             if (string.IsNullOrWhiteSpace(AddressInput.City) || string.IsNullOrWhiteSpace(AddressInput.Street))
             {
-                StatusMessage = "Eroare: Orașul și Strada sunt obligatorii.";
+                StatusMessage = "Eroare: Orasul și Strada sunt obligatorii.";
                 await LoadAsync(user);
                 return Page();
             }
 
-            // 1. Cream obiectul Address
             var newAddress = new Address
             {
                 City = AddressInput.City,
@@ -193,11 +180,9 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
                 ApartmentNumber = AddressInput.ApartmentNumber
             };
 
-            // 2. Il salvam in DB pentru a primi un ID
             _context.Addresses.Add(newAddress);
             await _context.SaveChangesAsync();
 
-            // 3. Facem legatura in tabela UserAdress
             var userAdressLink = new UserAdress
             {
                 UserId = user.Id,
@@ -206,29 +191,23 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
             _context.UserAdresses.Add(userAdressLink);
             await _context.SaveChangesAsync();
 
-            StatusMessage = "Adresă nouă adăugată!";
+            StatusMessage = "Adresa noua adaugata!";
             return RedirectToPage();
         }
 
-        // HANDLER 3: Stergere Adresa (Optional, dar util)
         public async Task<IActionResult> OnPostDeleteAddressAsync(int addressId)
         {
             var user = await _userManager.GetUserAsync(User);
 
-            // Cautam legatura
             var link = await _context.UserAdresses
                 .FirstOrDefaultAsync(ua => ua.UserId == user.Id && ua.AdressId == addressId);
 
             if (link != null)
             {
-                // Stergem legatura
                 _context.UserAdresses.Remove(link);
 
-                // Optional: Stergem si adresa fizica daca nu mai e folosita de nimeni
-                // Dar pentru siguranta stergem doar legatura momentan
-
                 await _context.SaveChangesAsync();
-                StatusMessage = "Adresa a fost ștearsă.";
+                StatusMessage = "Adresa a fost stearsa.";
             }
 
             return RedirectToPage();

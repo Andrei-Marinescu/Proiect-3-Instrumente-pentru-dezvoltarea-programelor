@@ -8,9 +8,9 @@
     <div class="d-flex justify-content-between align-items-center mb-5 border-bottom pb-3">
         <div>
             <h2 class="fw-bold text-danger">
-                <i class="bi bi-heart-fill"></i> Wishlist
+                <i class="bi bi-heart-fill"></i> <p class="text-black">Wishlist</p>
             </h2>
-            <p class="text-muted mb-0">Produsele tale favorite salvate pentru mai târziu.</p>
+            <p class="text-muted mb-0">Produsele tale favorite salvate pentru mai tarziu.</p>
         </div>
         <a asp-controller="Products" asp-action="Index" class="btn btn-outline-secondary">
             <i class="bi bi-arrow-left"></i> Inapoi la Magazin
@@ -41,7 +41,7 @@
                             <a asp-action="Remove" asp-route-id="@item.WishlistId"
                                class="position-absolute top-0 end-0 m-2 btn btn-sm btn-light rounded-circle shadow-sm text-danger"
                                title="Elimina din lista">
-                                <i class="bi bi-x-lg"></i>
+                                ♥
                             </a>
 
                             <div class="bg-white p-3 text-center rounded-top overflow-hidden">
@@ -74,7 +74,7 @@
                                         {
                                             <a asp-controller="Carts" asp-action="AddToCart" asp-route-productId="@item.Product.ProductId"
                                                class="btn btn-success btn-sm">
-                                                <i class="bi bi-cart-plus"></i> Adauga în Cos
+                                                <i class="bi bi-cart-plus"></i> Adauga in Cos
                                             </a>
                                         }
                                         else

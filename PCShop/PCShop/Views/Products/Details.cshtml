@@ -62,7 +62,7 @@
 
                 <div class="d-grid gap-2 d-md-flex justify-content-md-start">
 
-                    @if (Model.QuantityAvailable > 0 && !User.IsInRole("Admin"))
+                    @if (Model.QuantityAvailable > 0)
                     {
                         <a asp-controller="Carts"
                            asp-action="AddToCart"
@@ -99,6 +99,7 @@
                 </div>
                 <div class="card-body">
                     <p class="text-muted">ID Produs intern: #@Model.ProductId</p>
+                    <p class="text-muted">Descriere: @Model.Description</p>
                 </div>
             </div>
         </div>

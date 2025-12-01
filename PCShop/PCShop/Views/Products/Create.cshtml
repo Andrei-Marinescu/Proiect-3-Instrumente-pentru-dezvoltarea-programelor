@@ -1,59 +1,84 @@
 ﻿@model PCShop.Models.Product
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Adaugă Produs";
 }
 
-<h1>Create</h1>
+<div class="container mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-lg border-0 rounded-3">
+                <div class="card-header bg-secondary text-white p-4 rounded-top">
+                    <h3 class="mb-0 fw-bold"><i class="bi bi-box-seam"></i> Adaugă Produs Nou</h3>
+                    <small>Completează detaliile componentei PC</small>
+                </div>
+                <div class="card-body p-5 bg-light">
+                    <form asp-action="Create">
+                        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
 
-<h4>Product</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                        <div class="form-floating mb-3">
+                            <input asp-for="Name" class="form-control" placeholder="Nume produs" />
+                            <label asp-for="Name">Nume Produs</label>
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <textarea asp-for="Description" class="form-control" style="height: 100px" placeholder="Descriere"></textarea>
+                            <label asp-for="Description">Descriere</label>
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="row g-2 mb-3">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="Price" class="form-control" placeholder="Preț" />
+                                    <label asp-for="Price">Preț (RON)</label>
+                                    <span asp-validation-for="Price" class="text-danger"></span>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <input asp-for="QuantityAvailable" class="form-control" placeholder="Cantitate" />
+                                    <label asp-for="QuantityAvailable">Stoc Disponibil</label>
+                                    <span asp-validation-for="QuantityAvailable" class="text-danger"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input asp-for="ProductImage" class="form-control" placeholder="URL Imagine" />
+                            <label asp-for="ProductImage">URL Imagine Produs</label>
+                            <span asp-validation-for="ProductImage" class="text-danger"></span>
+                        </div>
+
+                        <div class="row g-2 mb-4">
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select asp-for="ProviderId" class="form-select" asp-items="ViewBag.ProviderId">
+                                        <option disabled selected>-- Selectează Furnizor --</option>
+                                    </select>
+                                    <label asp-for="ProviderId">Furnizor</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-floating">
+                                    <select asp-for="CategoryId" class="form-select" asp-items="ViewBag.CategoryId">
+                                        <option disabled selected>-- Selectează Categorie --</option>
+                                    </select>
+                                    <label asp-for="CategoryId">Categorie</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                            <a asp-action="Index" class="btn btn-outline-secondary me-md-2 px-4">Anulează</a>
+                            <input type="submit" value="Salvează Produsul" class="btn btn-primary px-5 fw-bold" />
+                        </div>
+                    </form>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="QuantityAvailable" class="control-label"></label>
-                <input asp-for="QuantityAvailable" class="form-control" />
-                <span asp-validation-for="QuantityAvailable" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Price" class="control-label"></label>
-                <input asp-for="Price" class="form-control" />
-                <span asp-validation-for="Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProductImage" class="control-label"></label>
-                <input asp-for="ProductImage" class="form-control" />
-                <span asp-validation-for="ProductImage" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="ProviderId" class="control-label"></label>
-                <select asp-for="ProviderId" class ="form-control" asp-items="ViewBag.ProviderId"></select>
-            </div>
-            <div class="form-group">
-                <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
-
-<div>
-    <a asp-action="Index">Back to List</a>
 </div>
 
 @section Scripts {

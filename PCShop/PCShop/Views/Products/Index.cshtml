@@ -7,7 +7,7 @@
 
 <div class="bg-light p-4 rounded mb-4 shadow-sm">
     <div class="text-center mb-4">
-        <h1 class="display-5 fw-bold text-primary">Componente PC</h1>
+        <h1 class="display-5 fw-bold text-dark">Componente PC</h1>
         <p class="lead text-muted">Cele mai performante piese pentru sistemul tau.</p>
     </div>
 
@@ -100,7 +100,7 @@
                                 }
                             </div>
 
-                            @if (!User.IsInRole("Admin") && item.QuantityAvailable > 0)
+                            @if (item.QuantityAvailable > 0)
                             {
                                 <a asp-controller="Carts" asp-action="AddToCart" asp-route-productId="@item.ProductId"
                                    class="btn btn-success btn-sm shadow-sm">

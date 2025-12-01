@@ -50,8 +50,6 @@ C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCS
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\uoiwd4ywxs-ttgo8qnofa.gz
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\93co8jz9gq-87fc7y1x7t.gz
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\d5ihnaybac-mlv21k5csn.gz
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\1glga9aj39-tf92729xg7.gz
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\3jzwdw7zxj-tf92729xg7.gz
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets.build.json
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets.development.json
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets.build.endpoints.json
@@ -61,7 +59,6 @@ C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCS
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets\msbuild.buildMultiTargeting.PCShop.props
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets\msbuild.buildTransitive.PCShop.props
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets.pack.json
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\PCShop.dll
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\refint\PCShop.dll
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\PCShop.pdb
@@ -437,3 +434,5 @@ C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCS
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\1glga9aj39-k40t7x9p1a.gz
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\3jzwdw7zxj-k40t7x9p1a.gz
