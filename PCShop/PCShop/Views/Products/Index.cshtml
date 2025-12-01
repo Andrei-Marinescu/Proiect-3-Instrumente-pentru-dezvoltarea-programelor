@@ -46,11 +46,22 @@
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             @foreach (var item in Model)
             {
+                string imgSrc = "";
+                if (item.ProductImage != null && item.ProductImage.Length > 0)
+                {
+                    string base64 = Convert.ToBase64String(item.ProductImage);
+                    imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
+                }
+                else
+                {
+                    imgSrc = "https://via.placeholder.com/300?text=No+Image";
+                }
+
                 <div class="col">
                     <div class="card h-100 shadow-sm border-0 product-card">
 
                         <div class="position-relative bg-white text-center overflow-hidden rounded-top">
-                            <img src="@(string.IsNullOrEmpty(item.ProductImage) ? "https://via.placeholder.com/300?text=No+Image" : item.ProductImage)"
+                            <img src="@imgSrc"
                                  class="card-img-top p-4"
                                  alt="@item.Name"
                                  style="height: 250px; object-fit: contain;">

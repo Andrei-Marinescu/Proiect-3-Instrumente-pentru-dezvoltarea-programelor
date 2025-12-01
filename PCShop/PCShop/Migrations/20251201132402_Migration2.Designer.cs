@@ -12,8 +12,8 @@ using PCShop.Models;
 namespace PCShop.Migrations
 {
     [DbContext(typeof(PCShopContext))]
-    [Migration("20251121095041_modify")]
-    partial class modify
+    [Migration("20251201132402_Migration2")]
+    partial class Migration2
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -332,9 +332,8 @@ namespace PCShop.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("numeric");
 
-                    b.Property<string>("ProductImage")
-                        .IsRequired()
-                        .HasColumnType("text");
+                    b.Property<byte[]>("ProductImage")
+                        .HasColumnType("bytea");
 
                     b.Property<int>("ProviderId")
                         .HasColumnType("integer");
@@ -485,12 +484,17 @@ namespace PCShop.Migrations
                     b.Property<int?>("ProductId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("ProductId1")
+                        .HasColumnType("integer");
+
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
                     b.HasKey("WishlistId");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductId1");
 
                     b.HasIndex("UserId");
 
@@ -657,8 +661,13 @@ namespace PCShop.Migrations
             modelBuilder.Entity("PCShop.Models.Wishlist", b =>
                 {
                     b.HasOne("PCShop.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("PCShop.Models.Product", null)
                         .WithMany("Wishlists")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId1");
 
                     b.HasOne("PCShop.Models.User", "User")
                         .WithMany("Wishlists")

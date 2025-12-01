@@ -12,8 +12,8 @@ using PCShop.Models;
 namespace PCShop.Migrations
 {
     [DbContext(typeof(PCShopContext))]
-    [Migration("20251121094346_modify product field")]
-    partial class modifyproductfield
+    [Migration("20251201125431_newMigration")]
+    partial class newMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -485,12 +485,17 @@ namespace PCShop.Migrations
                     b.Property<int?>("ProductId")
                         .HasColumnType("integer");
 
+                    b.Property<int?>("ProductId1")
+                        .HasColumnType("integer");
+
                     b.Property<int>("UserId")
                         .HasColumnType("integer");
 
                     b.HasKey("WishlistId");
 
                     b.HasIndex("ProductId");
+
+                    b.HasIndex("ProductId1");
 
                     b.HasIndex("UserId");
 
@@ -657,8 +662,13 @@ namespace PCShop.Migrations
             modelBuilder.Entity("PCShop.Models.Wishlist", b =>
                 {
                     b.HasOne("PCShop.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("PCShop.Models.Product", null)
                         .WithMany("Wishlists")
-                        .HasForeignKey("ProductId");
+                        .HasForeignKey("ProductId1");
 
                     b.HasOne("PCShop.Models.User", "User")
                         .WithMany("Wishlists")

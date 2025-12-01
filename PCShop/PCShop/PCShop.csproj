@@ -21,6 +21,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Migrations\" />
     <Folder Include="Views\Users\" />
     <Folder Include="wwwroot\css\Images\" />
   </ItemGroup>

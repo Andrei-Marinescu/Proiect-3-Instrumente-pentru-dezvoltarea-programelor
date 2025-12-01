@@ -73,10 +73,20 @@ namespace PCShop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([Bind("ProductId,Name,Description,QuantityAvailable,Price,ProductImage,ProviderId,CategoryId")] Product product)
+        public async Task<IActionResult> Create([Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile)
         {
+            
             if (ModelState.IsValid)
             {
+                if (imageFile != null && imageFile.Length > 0)
+                {
+                    using (var memoryStream = new System.IO.MemoryStream())
+                    {
+                        await imageFile.CopyToAsync(memoryStream);
+                        product.ProductImage = memoryStream.ToArray();
+                    }
+                }
+
                 _context.Add(product);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -111,7 +121,7 @@ namespace PCShop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,Description,QuantityAvailable,Price,ProductImage,ProviderId,CategoryId")] Product product)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile)
         {
             if (id != product.ProductId)
             {
@@ -120,22 +130,38 @@ namespace PCShop.Controllers
 
             if (ModelState.IsValid)
             {
-                try
+                if (imageFile != null && imageFile.Length > 0)
                 {
-                    _context.Update(product);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!ProductExists(product.ProductId))
+                    using (var memoryStream = new System.IO.MemoryStream())
                     {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
+                        await imageFile.CopyToAsync(memoryStream);
+                        product.ProductImage = memoryStream.ToArray();
                     }
                 }
+                else
+                {
+                    var existingProduct = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.ProductId == id);
+                    if (existingProduct != null)
+                    {
+                        product.ProductImage = existingProduct.ProductImage;
+                    }
+                }
+                    try
+                    {
+                        _context.Update(product);
+                        await _context.SaveChangesAsync();
+                    }
+                    catch (DbUpdateConcurrencyException)
+                    {
+                        if (!ProductExists(product.ProductId))
+                        {
+                            return NotFound();
+                        }
+                        else
+                        {
+                            throw;
+                        }
+                    }
                 return RedirectToAction(nameof(Index));
             }
             ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");

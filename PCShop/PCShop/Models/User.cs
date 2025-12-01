@@ -14,12 +14,12 @@ namespace PCShop.Models
 
         
         // User(1) : UserAdress(N) | User(N) : Adress(M)
-        public ICollection<UserAdress> UserAdresses { get; set; }
+        public ICollection<UserAdress>? UserAdresses { get; set; }
 
         // User(1) : Wishlist(N)
-        public ICollection<Wishlist> Wishlists { get; set; }
+        public ICollection<Wishlist>? Wishlists { get; set; }
 
         // User(1) : Order(N)
-        public ICollection<Order> Orders { get; set; }
+        public ICollection<Order>? Orders { get; set; }
     }
 }

@@ -5,16 +5,16 @@
 namespace PCShop.Migrations
 {
     /// <inheritdoc />
-    public partial class modify : Migration
+    public partial class Migration2 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.AlterColumn<string>(
+            migrationBuilder.AlterColumn<byte[]>(
                 name: "ProductImage",
                 table: "Products",
-                type: "text",
-                nullable: false,
+                type: "bytea",
+                nullable: true,
                 oldClrType: typeof(byte[]),
                 oldType: "bytea");
         }
@@ -27,8 +27,10 @@ namespace PCShop.Migrations
                 table: "Products",
                 type: "bytea",
                 nullable: false,
-                oldClrType: typeof(string),
-                oldType: "text");
+                defaultValue: new byte[0],
+                oldClrType: typeof(byte[]),
+                oldType: "bytea",
+                oldNullable: true);
         }
     }
 }
