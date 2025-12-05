@@ -1,21 +1,25 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PCShop.Models;
+using PCShop.ViewModels;
 
 namespace PCShop.Controllers
 {
     public class OrdersController : Controller
     {
         private readonly PCShopContext _context;
-
-        public OrdersController(PCShopContext context)
+        private readonly UserManager<User> _userManager;
+        public OrdersController(PCShopContext context, UserManager<User> userManager) 
         {
             _context = context;
+            _userManager = userManager;
         }
 
         // GET: Orders
@@ -165,5 +169,125 @@ namespace PCShop.Controllers
         {
             return _context.Orders.Any(e => e.OrderId == id);
         }
+
+        public async Task<IActionResult> Checkout()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return RedirectToAction("Login", "Account");
+
+            var cart = _context.Carts
+                .Include(c => c.CartItems)
+                .ThenInclude(ci => ci.Product)
+                .FirstOrDefault(c => c.UserId == user.Id);
+
+            if (cart == null || cart.CartItems == null || !cart.CartItems.Any())
+            {
+                TempData["Error"] = "Cosul tau este gol.";
+                return RedirectToAction("Index", "Carts");
+            }
+
+            var userAdresses = await _context.UserAdresses
+                .Include(ua => ua.Address)
+                .Where(ua => ua.UserId == user.Id)
+                .Include(ua => ua.Address)
+                .Select(ua => ua.Address)
+                .ToListAsync();
+
+            decimal total = 0;
+
+            if (cart?.CartItems != null)
+                total = cart.CartItems.Sum(i => i.Product.Price * (i.Quantity ?? 1));
+
+            var viewModel = new CartIndexViewModel
+            {
+                Cart = cart,
+                TotalPrice = total,
+                SavedAddresses = userAdresses.Select(a => new SelectListItem
+                {
+                    Value = a.AdressId.ToString(),
+                    Text = $"{a.City}, {a.Street}, Bl. {a.ApartmentBlock}"
+                }).ToList()
+            };
+
+            return View(viewModel);
+        }
+        
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Checkout(CartIndexViewModel model)
+        {
+            var user = await _userManager.GetUserAsync(User);
+            if (user == null)
+                return RedirectToAction("Login", "Account");
+
+            var cart = await _context.Carts
+                .Include(c => c.CartItems)
+                .ThenInclude(ci => ci.Product)
+                .FirstOrDefaultAsync(c => c.UserId == user.Id); 
+
+            if (cart == null || !cart.CartItems.Any())
+                return RedirectToAction("Index", "Products");
+
+            if (ModelState.IsValid)
+            {
+                var order = new Order
+                {
+                    UserId = user.Id,
+                    AdressId = model.SelectedAddressId,
+                    OrderDate = DateTime.UtcNow,
+                    PaymentMethode = model.PaymentMethod,
+                    TotalAmount = (int)cart.CartItems.Sum(i => i.Product.Price * (i.Quantity ?? 1))
+                };
+
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+
+                foreach (var item in cart.CartItems)
+                {
+                    var orderItem = new OrderItem
+                    {
+                        OrderId = order.OrderId,
+                        ProductId = item.ProductId,
+                        Quantity = item.Quantity,
+                        Price = item.Product.Price
+                    };
+                    _context.Add(orderItem);
+                }
+
+                _context.CartItems.RemoveRange(cart.CartItems);
+                await _context.SaveChangesAsync();
+
+                return RedirectToAction(nameof(OrderConfirmation), new { id = order.OrderId });
+            }
+
+            var userAdresses = await _context.UserAdresses
+                .Where(ua => ua.UserId == user.Id)
+                .Include(ua => ua.Address)
+                .Select(ua => ua.Address)
+                .ToListAsync();
+
+            model.SavedAddresses = userAdresses.Select(a => new SelectListItem
+            {
+                Value = a.AdressId.ToString(),
+                Text = $"{a.City}, {a.Street}, Bl. {a.ApartmentBlock}"  
+            }).ToList();
+
+            model.CartItems = cart.CartItems.ToList();
+
+            return View(model);
+        }
+
+        public async Task<IActionResult> OrderConfirmation(int id)
+        {
+            var order = await _context.Orders
+                .Include(o => o.OrderItems)
+                .ThenInclude(oi => oi.Product)
+                .Include(o => o.Address)
+                .FirstOrDefaultAsync(o => o.OrderId == id);
+
+            return View(order);
+        }
+        
     }
 }
