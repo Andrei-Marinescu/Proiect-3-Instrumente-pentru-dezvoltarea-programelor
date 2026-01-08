@@ -17,7 +17,7 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
     {
         private readonly UserManager<User> _userManager;
         private readonly SignInManager<User> _signInManager;
-        private readonly PCShopContext _context; 
+        private readonly PCShopContext _context;
 
         public IndexModel(
             UserManager<User> userManager,
@@ -36,7 +36,9 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
 
         public byte[] ExistingProfilePicture { get; set; }
 
+        
         public IList<Address> ExistingAddresses { get; set; }
+        public IList<Order> OrderHistory { get; set; } 
 
         [BindProperty]
         public InputModel Input { get; set; }
@@ -62,17 +64,17 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
         public class AddressInputModel
         {
             [Required(ErrorMessage = "Orașul este obligatoriu")]
-            [Display(Name = "Oras")]
+            [Display(Name = "Oraș")]
             public string City { get; set; }
 
             [Required(ErrorMessage = "Strada este obligatorie")]
-            [Display(Name = "Strada")]
+            [Display(Name = "Stradă")]
             public string Street { get; set; }
 
             [Display(Name = "Bloc")]
             public string ApartmentBlock { get; set; }
 
-            [Display(Name = "Numar Apartament")]
+            [Display(Name = "Număr Apartament")]
             public int ApartmentNumber { get; set; }
         }
 
@@ -95,6 +97,14 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
                 .Where(ua => ua.UserId == user.Id)
                 .Select(ua => ua.Address)
                 .ToListAsync();
+
+            OrderHistory = await _context.Orders
+                .Include(o => o.Address)             // Detalii livrare
+                .Include(o => o.OrderItems)          // Produsele din comanda
+                    .ThenInclude(oi => oi.Product)   // Detalii produs 
+                .Where(o => o.UserId == user.Id)
+                .OrderByDescending(o => o.OrderDate) 
+                .ToListAsync();
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -106,7 +116,7 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
             return Page();
         }
 
-
+        
         public async Task<IActionResult> OnPostAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -114,21 +124,10 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
 
             bool hasChanges = false;
 
-            if (Input.PhoneNumber != user.PhoneNumber)
-            {
-                user.PhoneNumber = Input.PhoneNumber;
-                hasChanges = true;
-            }
-            if (Input.FirstName != user.FirstName)
-            {
-                user.FirstName = Input.FirstName;
-                hasChanges = true;
-            }
-            if (Input.LastName != user.LastName)
-            {
-                user.LastName = Input.LastName;
-                hasChanges = true;
-            }
+            if (Input.PhoneNumber != user.PhoneNumber) { user.PhoneNumber = Input.PhoneNumber; hasChanges = true; }
+            if (Input.FirstName != user.FirstName) { user.FirstName = Input.FirstName; hasChanges = true; }
+            if (Input.LastName != user.LastName) { user.LastName = Input.LastName; hasChanges = true; }
+
             if (Input.ProfilePicture != null)
             {
                 using (var dataStream = new MemoryStream())
@@ -154,12 +153,13 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
             }
             else
             {
-                StatusMessage = "Nu au fost detectate modificari la profil.";
+                StatusMessage = "Nu au fost detectate modificari.";
             }
 
             return RedirectToPage();
         }
 
+        // Adaugare de adrese
         public async Task<IActionResult> OnPostAddAddressAsync()
         {
             var user = await _userManager.GetUserAsync(User);
@@ -167,9 +167,8 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
 
             if (string.IsNullOrWhiteSpace(AddressInput.City) || string.IsNullOrWhiteSpace(AddressInput.Street))
             {
-                StatusMessage = "Eroare: Orasul și Strada sunt obligatorii.";
-                await LoadAsync(user);
-                return Page();
+                StatusMessage = "Eroare: Orașul și Strada sunt obligatorii.";
+                return RedirectToPage();
             }
 
             var newAddress = new Address
@@ -195,21 +194,19 @@ namespace PCShop.Areas.Identity.Pages.Account.Manage
             return RedirectToPage();
         }
 
+        
+        // Stergere adrese
         public async Task<IActionResult> OnPostDeleteAddressAsync(int addressId)
         {
             var user = await _userManager.GetUserAsync(User);
-
-            var link = await _context.UserAdresses
-                .FirstOrDefaultAsync(ua => ua.UserId == user.Id && ua.AdressId == addressId);
+            var link = await _context.UserAdresses.FirstOrDefaultAsync(ua => ua.UserId == user.Id && ua.AdressId == addressId);
 
             if (link != null)
             {
                 _context.UserAdresses.Remove(link);
-
                 await _context.SaveChangesAsync();
                 StatusMessage = "Adresa a fost stearsa.";
             }
-
             return RedirectToPage();
         }
     }

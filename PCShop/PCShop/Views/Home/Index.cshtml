@@ -1,8 +1,163 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Acasă";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="p-5 mb-4 bg-dark rounded-3 position-relative overflow-hidden text-white shadow"
+     style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=2574&auto=format&fit=crop');
+            background-size: cover; background-position: center; min-height: 500px; display: flex; align-items: center;">
+
+    <div class="container-fluid py-5 text-center">
+        <h1 class="display-3 fw-bold">Construiește PC-ul Visurilor Tale</h1>
+        <p class="col-md-8 fs-4 mx-auto mb-4 text-light opacity-75">
+            Cele mai performante componente, periferice de gaming și accesorii IT, toate într-un singur loc.
+        </p>
+        <div class="d-flex justify-content-center gap-3">
+            <a asp-controller="Products" asp-action="Index" class="btn btn-primary btn-lg px-4 py-2 shadow fw-bold">
+                <i class="bi bi-cart-fill me-2"></i> Vezi Produsele
+            </a>
+            @if (!User.Identity.IsAuthenticated)
+            {
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-light btn-lg px-4 py-2 fw-bold">
+                    Creează Cont
+                </a>
+            }
+        </div>
+    </div>
 </div>
+
+<div class="container py-5">
+    <div class="row g-4 text-center">
+        <div class="col-md-4">
+            <div class="p-4 bg-light rounded shadow-sm h-100 hover-effect">
+                <div class="text-primary mb-3">
+                    <i class="bi bi-cpu fs-1"></i>
+                </div>
+                <h3 class="fw-bold">Calitate Premium</h3>
+                <p class="text-muted">
+                    Lucrăm doar cu furnizori certificați precum Intel, AMD, NVIDIA și ASUS pentru a garanta calitatea.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-light rounded shadow-sm h-100 hover-effect">
+                <div class="text-success mb-3">
+                    <i class="bi bi-truck fs-1"></i>
+                </div>
+                <h3 class="fw-bold">Livrare Rapidă</h3>
+                <p class="text-muted">
+                    Comenzile plasate până în ora 14:00 sunt expediate în aceeași zi. Transport gratuit peste 500 RON.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="p-4 bg-light rounded shadow-sm h-100 hover-effect">
+                <div class="text-danger mb-3">
+                    <i class="bi bi-shield-check fs-1"></i>
+                </div>
+                <h3 class="fw-bold">Garanție & Retur</h3>
+                <p class="text-muted">
+                    Oferim garanție extinsă și drept de retur în 30 de zile fără întrebări suplimentare.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container py-5">
+    <div class="d-flex justify-content-between align-items-end mb-4">
+        <div>
+            <h2 class="fw-bold mb-0">Categorii Populare</h2>
+            <p class="text-muted mb-0">Ce cauți astăzi?</p>
+        </div>
+        <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary">Toate produsele <i class="bi bi-arrow-right"></i></a>
+    </div>
+
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+        <div class="col">
+            <a asp-controller="Products" asp-action="Index" class="text-decoration-none">
+                <div class="card bg-dark text-white border-0 shadow overflow-hidden category-card">
+                    <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?w=500&auto=format&fit=crop" class="card-img opacity-50" alt="CPU">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <h3 class="fw-bold text-uppercase">Procesoare</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a asp-controller="Products" asp-action="Index" class="text-decoration-none">
+                <div class="card bg-dark text-white border-0 shadow overflow-hidden category-card">
+                    <img src="https://images.unsplash.com/photo-1555617778-02518510b9fa?w=500&auto=format&fit=crop" class="card-img opacity-50" alt="GPU">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <h3 class="fw-bold text-uppercase">Plăci Video</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a asp-controller="Products" asp-action="Index" class="text-decoration-none">
+                <div class="card bg-dark text-white border-0 shadow overflow-hidden category-card">
+                    <img src="https://images.unsplash.com/photo-1562976540-1502c2145186?w=500&auto=format&fit=crop" class="card-img opacity-50" alt="RAM">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <h3 class="fw-bold text-uppercase">Memorii RAM</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col">
+            <a asp-controller="Products" asp-action="Index" class="text-decoration-none">
+                <div class="card bg-dark text-white border-0 shadow overflow-hidden category-card">
+                    <img src="https://images.unsplash.com/photo-1587831990711-23ca6441447b?w=500&auto=format&fit=crop" class="card-img opacity-50" alt="Accessories">
+                    <div class="card-img-overlay d-flex align-items-center justify-content-center">
+                        <h3 class="fw-bold text-uppercase">Periferice</h3>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="bg-primary text-white py-5 mt-5">
+    <div class="container text-center">
+        <h2 class="fw-bold">Nu rata ofertele speciale!</h2>
+        <p class="lead">Abonează-te la newsletter și primești 5% reducere la prima comandă.</p>
+        <div class="row justify-content-center mt-4">
+            <div class="col-md-6">
+                <form class="d-flex gap-2">
+                    <input type="email" class="form-control form-control-lg border-0" placeholder="Adresa ta de email">
+                    <button type="button" class="btn btn-dark btn-lg">Mă Abonez</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .hover-effect {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .hover-effect:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+        }
+
+    .category-card {
+        height: 200px;
+        transition: transform 0.3s ease;
+    }
+
+        .category-card img {
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .category-card:hover {
+            transform: scale(1.02);
+        }
+
+            .category-card:hover img {
+                transform: scale(1.1);
+                opacity: 0.3 !important; /* Mai intunecat la hover pentru a scoate textul in evidenta */
+            }
+</style>

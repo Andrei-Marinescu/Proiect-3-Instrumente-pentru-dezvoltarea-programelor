@@ -14,7 +14,6 @@
             <div class="card-header bg-white fw-bold">Date Personale</div>
             <div class="card-body">
                 <form id="profile-form" method="post" enctype="multipart/form-data">
-
                     <div class="text-center mb-4">
                         @if (Model.ExistingProfilePicture != null && Model.ExistingProfilePicture.Length > 0)
                         {
@@ -29,7 +28,7 @@
                         }
 
                         <div class="input-group input-group-sm mb-3">
-                            <label class="input-group-text" for="avatarUpload">Upload</label>
+                            <label class="input-group-text" for="avatarUpload">Schimba</label>
                             <input type="file" class="form-control" id="avatarUpload" asp-for="Input.ProfilePicture" accept=".png,.jpg,.jpeg">
                         </div>
                     </div>
@@ -60,7 +59,7 @@
                     </div>
 
                     <button id="update-profile-button" type="submit" class="btn btn-primary w-100">
-                        Salveaza Modificarile Profilului
+                        Salveaza Modificarile
                     </button>
                 </form>
             </div>
@@ -89,7 +88,6 @@
                                         Bloc: @(addr.ApartmentBlock ?? "-"), Ap: @addr.ApartmentNumber
                                     </small>
                                 </div>
-
                                 <form method="post" asp-page-handler="DeleteAddress" asp-route-addressId="@addr.AdressId">
                                     <button type="submit" class="btn btn-sm btn-outline-danger" title="Șterge">
                                         <i class="bi bi-trash"></i>
@@ -101,13 +99,10 @@
                 }
                 else
                 {
-                    <div class="alert alert-light text-center">
-                        Nu ai adaugat nicio adresa.
-                    </div>
+                    <div class="alert alert-light text-center">Nu ai nicio adresă salvata.</div>
                 }
 
                 <hr class="mt-auto" />
-
                 <h6 class="fw-bold mb-3"><i class="bi bi-plus-circle"></i> Adauga Adresa Noua</h6>
 
                 <form method="post" asp-page-handler="AddAddress">
@@ -139,14 +134,115 @@
                             </div>
                         </div>
                     </div>
-
-                    <button type="submit" class="btn btn-success w-100">
-                        Salveaza Adresa
-                    </button>
+                    <button type="submit" class="btn btn-success w-100">Salvează Adresa</button>
                 </form>
-
             </div>
         </div>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12">
+        <h4 class="mb-3 fw-bold"><i class="bi bi-bag-check-fill text-primary"></i> Istoric Comenzi</h4>
+
+        @if (Model.OrderHistory != null && Model.OrderHistory.Any())
+        {
+            <div class="accordion" id="ordersAccordion">
+                @foreach (var order in Model.OrderHistory)
+                {
+                    <div class="accordion-item shadow-sm mb-3 border">
+                        <h2 class="accordion-header" id="heading-@order.OrderId">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@order.OrderId" aria-expanded="false" aria-controls="collapse-@order.OrderId">
+                                <div class="d-flex w-100 justify-content-between me-3 align-items-center">
+                                    <span>
+                                        <strong>Comanda #@order.OrderId</strong>
+                                        <span class="text-muted ms-2 small">@order.OrderDate.ToString("dd MMM yyyy")</span>
+                                    </span>
+                                    <span class="badge bg-primary rounded-pill">
+                                        @order.TotalAmount RON
+                                    </span>
+                                </div>
+                            </button>
+                        </h2>
+                        <div id="collapse-@order.OrderId" class="accordion-collapse collapse" aria-labelledby="heading-@order.OrderId" data-bs-parent="#ordersAccordion">
+                            <div class="accordion-body bg-light">
+                                <div class="row mb-3">
+                                    <div class="col-md-6">
+                                        <small class="text-muted text-uppercase fw-bold">Livrare la:</small><br>
+                                        @if (order.Address != null)
+                                        {
+                                            <span>@order.Address.City, @order.Address.Street, Bl. @order.Address.ApartmentBlock, Ap. @order.Address.ApartmentNumber</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="text-danger">Adresa a fost stearsa sau este invalida</span>
+                                        }
+                                    </div>
+                                    <div class="col-md-6 text-md-end">
+                                        <small class="text-muted text-uppercase fw-bold">Metoda de plata:</small><br>
+                                        <span>@order.PaymentMethode</span>
+                                    </div>
+                                </div>
+
+                                <div class="table-responsive bg-white rounded border">
+                                    <table class="table table-borderless mb-0 align-middle">
+                                        <thead class="table-light border-bottom">
+                                            <tr>
+                                                <th>Produs</th>
+                                                <th class="text-center">Cantitate</th>
+                                                <th class="text-end">Pret unitar</th>
+                                                <th class="text-end">Subtotal</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            @if (order.OrderItems != null)
+                                            {
+                                                @foreach (var item in order.OrderItems)
+                                                {
+                                                    <tr>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                @if (item.Product != null && item.Product.ProductImage != null && item.Product.ProductImage.Length > 0)
+                                                                {
+                                                                    <img src="data:image/*;base64,@(Convert.ToBase64String(item.Product.ProductImage))"
+                                                                         style="width: 40px; height: 40px; object-fit: contain;" class="me-2 border rounded p-1 bg-white">
+                                                                }
+                                                                else
+                                                                {
+                                                                    <div style="width: 40px; height: 40px;" class="me-2 bg-secondary rounded d-flex align-items-center justify-content-center text-white small">N/A</div>
+                                                                }
+                                                                <span class="fw-bold">@(item.Product?.Name ?? "Produs Șters")</span>
+                                                            </div>
+                                                        </td>
+                                                        <td class="text-center">x @item.Quantity</td>
+                                                        <td class="text-end text-muted">@item.Price RON</td>
+                                                        <td class="text-end fw-bold">@(item.Quantity * item.Price) RON</td>
+                                                    </tr>
+                                                }
+                                            }
+                                        </tbody>
+                                        <tfoot class="border-top">
+                                            <tr>
+                                                <td colspan="3" class="text-end fw-bold">TOTAL:</td>
+                                                <td class="text-end fw-bold text-primary">@order.TotalAmount RON</td>
+                                            </tr>
+                                        </tfoot>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        }
+        else
+        {
+            <div class="alert alert-info text-center py-4">
+                <i class="bi bi-cart-x display-4"></i>
+                <p class="mt-3 mb-0">Nu ai plasat incă nicio comanda.</p>
+                <a asp-controller="Products" asp-action="Index" class="btn btn-outline-primary mt-2">Mergi la Magazin</a>
+            </div>
+        }
     </div>
 </div>
 
