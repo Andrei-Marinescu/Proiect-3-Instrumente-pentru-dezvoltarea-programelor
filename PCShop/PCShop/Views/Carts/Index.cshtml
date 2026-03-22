@@ -51,7 +51,6 @@
                                         var quantity = item.Quantity ?? 1;
                                         var lineTotal = price * quantity;
 
-                                        // LOGICA IMAGINE BASE64
                                         string imgSrc = "";
                                         if (item.Product.ProductImage != null && item.Product.ProductImage.Length > 0)
                                         {
@@ -113,7 +112,7 @@
             <div class="col-lg-4">
                 <div class="card border-0 shadow-sm bg-white">
                     <div class="card-header bg-primary text-white py-3">
-                        <h5 class="mb-0 fw-bold"><i class="bi bi-credit-card"></i> Finalizare Comandă</h5>
+                        <h5 class="mb-0 fw-bold"><i class="bi bi-credit-card"></i> Finalizare Comanda</h5>
                     </div>
 
                     <div class="card-body">
@@ -138,15 +137,15 @@
                                 @if (Model.SavedAddresses != null && Model.SavedAddresses.Any())
                                 {
                                     <select asp-for="SelectedAddressId" asp-items="Model.SavedAddresses" class="form-select shadow-none">
-                                        <option value="" disabled selected>Selectează adresa...</option>
+                                        <option value="" disabled selected>Selecteaza adresa...</option>
                                     </select>
                                     <span asp-validation-for="SelectedAddressId" class="text-danger small"></span>
                                 }
                                 else
                                 {
                                     <div class="alert alert-warning small">
-                                        Nu ai nicio adresă salvată.
-                                        <a asp-controller="Addresses" asp-action="Create" class="alert-link">Adaugă una acum</a>.
+                                        Nu ai nicio adresa salvata.
+                                        <a href="/Identity/Account/Manage" class="alert-link">Adaugă una acum</a>.
                                     </div>
                                 }
                             </div>
@@ -163,7 +162,7 @@
                             <div class="d-grid gap-2">
                                 <button type="submit" class="btn btn-success btn-lg py-3 shadow hover-elevate"
                                 @(Model.SavedAddresses == null || !Model.SavedAddresses.Any() ? "disabled" : "")>
-                                    Plasează Comanda <i class="bi bi-check-circle-fill ms-1"></i>
+                                    Plaseaza Comanda <i class="bi bi-check-circle-fill ms-1"></i>
                                 </button>
                             </div>
                         </form>

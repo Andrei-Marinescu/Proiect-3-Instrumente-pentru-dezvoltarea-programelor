@@ -1,7 +1,0 @@
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\wwwroot\css\Images\CPU\AMD\Ryzen 5 5600X.png
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\wwwroot\css\Images\CPU\Intel\I7 14700k.png
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\wwwroot\css\Images\GPU\Asus\RTX4070.png
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\wwwroot\css\Images\GPU\MSI\RTX5080.png
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\wwwroot\css\Images\PSU\Corsair\CX750.png
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\wwwroot\css\Images\RAM\Kingstone\Kingstone16GB3200MHZ.png
-C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\wwwroot\css\Images\RAM\Kingstone\VSCodeUserSetup-x64-1.107.0.exe

@@ -93,6 +93,9 @@
                                             <button class="btn btn-secondary btn-sm" disabled>Stoc Epuizat</button>
                                         }
                                     </div>
+                                    <a asp-controller="Wishlists" asp-action="ToggleWishlist" asp-route-productId="@item.ProductId" class="btn btn-outline-danger">
+                                        ♥
+                                    </a>
                                 </div>
                             </div>
 

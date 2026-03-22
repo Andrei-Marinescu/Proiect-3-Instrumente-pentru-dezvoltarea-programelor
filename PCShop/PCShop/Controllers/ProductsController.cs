@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using PCShop.Helpers;
 using PCShop.Models;
 
 namespace PCShop.Controllers
@@ -20,22 +21,31 @@ namespace PCShop.Controllers
         }
 
         // GET: Products
-       
-        public async Task<IActionResult> Index(int? categoryId)
+        public async Task<IActionResult> Index(int? categoryId, string searchString)
         {
             var productsQuery = _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Provider)
                 .AsQueryable();
 
+        
             if (categoryId.HasValue)
             {
                 productsQuery = productsQuery.Where(p => p.CategoryId == categoryId);
             }
 
-            ViewData["Categories"] = new SelectList(_context.Categories, "CategoryId", "Name", categoryId);
+            var productsList = await productsQuery.ToListAsync();
 
-            return View(await productsQuery.ToListAsync());
+            if (!string.IsNullOrWhiteSpace(searchString))
+            {
+                productsList = TfIdfSearch.Search(productsList, searchString);
+            }
+
+
+            ViewData["Categories"] = new SelectList(_context.Categories, "CategoryId", "Name", categoryId);
+            ViewData["CurrentSearch"] = searchString;
+
+            return View(productsList);
         }
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)

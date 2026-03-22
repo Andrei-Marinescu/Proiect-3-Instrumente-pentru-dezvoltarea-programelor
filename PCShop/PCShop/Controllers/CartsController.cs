@@ -1,11 +1,11 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering; // NECESAR pentru SelectListItem
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PCShop.Models;
-using PCShop.ViewModels; // NECESAR pentru CartIndexViewModel
-using System.Linq; // NECESAR pentru .Select()
+using PCShop.ViewModels; 
+using System.Linq; 
 using System.Threading.Tasks;
 
 namespace PCShop.Controllers
@@ -13,8 +13,6 @@ namespace PCShop.Controllers
     [Authorize]
     public class CartsController : Controller
     {
-        // Asigura-te ca numele contextului este corect (PCShopContext sau ApplicationDbContext)
-        // Am lasat PCShopContext cum era in codul tau
         private readonly PCShopContext _context;
         private readonly UserManager<User> _userManager;
 
@@ -24,39 +22,36 @@ namespace PCShop.Controllers
             _userManager = userManager;
         }
 
-        // GET: Carts
         public async Task<IActionResult> Index()
         {
             var user = await _userManager.GetUserAsync(User);
             if (user == null) return RedirectToAction("Login", "Account");
 
-            // 1. Luam Cosul si Produsele
+            // Extragem cosul si produsele din cos
             var cart = await _context.Carts
                 .Include(c => c.CartItems)
                 .ThenInclude(ci => ci.Product)
                 .FirstOrDefaultAsync(c => c.UserId == user.Id);
 
-            // 2. Luam Adresele Utilizatorului
-            // AICI AM REPARAT EROAREA: am adaugat 'await' si '.Select'
+            // Extragem adresele utilizatorului
             var userAddresses = await _context.UserAdresses
                 .Where(ua => ua.UserId == user.Id)
                 .Include(ua => ua.Address)
                 .Select(ua => ua.Address) // Extragem obiectul Address din relatia UserAdress
                 .ToListAsync();
 
-            // 3. Calculam Totalul
+            // Calculam Totalul Cosului
             decimal total = 0;
             if (cart?.CartItems != null)
             {
                 total = cart.CartItems.Sum(i => i.Product.Price * (i.Quantity ?? 1));
             }
 
-            // 4. Construim ViewModel-ul pentru pagina One-Page Checkout
+            // Construim ViewModel-ul pentru pagina Checkout
             var viewModel = new CartIndexViewModel
             {
                 Cart = cart,
                 TotalPrice = total,
-                // Populăm dropdown-ul de adrese
                 SavedAddresses = userAddresses.Select(a => new SelectListItem
                 {
                     Value = a.AdressId.ToString(),
@@ -64,11 +59,10 @@ namespace PCShop.Controllers
                 }).ToList()
             };
 
-            // Returnam ViewModel-ul, NU variabila 'cart'
             return View(viewModel);
         }
 
-        // Action: Adauga in cos
+        //Adaugarea in cos
         public async Task<IActionResult> AddToCart(int productId)
         {
             var user = await _userManager.GetUserAsync(User);
@@ -110,7 +104,7 @@ namespace PCShop.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Action: Sterge din cos
+        // Stergerea din cos
         public async Task<IActionResult> RemoveFromCart(int cartItemId)
         {
             var cartItem = await _context.CartItems.FindAsync(cartItemId);
@@ -124,7 +118,7 @@ namespace PCShop.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Action: Actualizeaza Cantitatea (+ sau -)
+        //Actualizeaza Cantitatea (+ sau -)
         [HttpPost]
         public async Task<IActionResult> UpdateQuantity(int cartItemId, int quantity)
         {
@@ -137,7 +131,6 @@ namespace PCShop.Controllers
                 }
                 else
                 {
-                    // Daca scade sub 1, stergem produsul
                     _context.CartItems.Remove(cartItem);
                 }
                 await _context.SaveChangesAsync();

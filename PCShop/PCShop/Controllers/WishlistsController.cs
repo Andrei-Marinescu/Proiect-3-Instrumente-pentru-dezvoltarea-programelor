@@ -57,6 +57,7 @@ namespace PCShop.Controllers
             return View(wishlist);
         }
 
+        // Adaugare / Stergere produs din wishlist
         public async Task<IActionResult> ToggleWishlist(int productId)
         {
             var user = await _userManager.GetUserAsync(User);

@@ -4,8 +4,6 @@
 @{
     ViewData["Title"] = Model.Name;
 
-    // --- LOGICA PENTRU AFISARE IMAGINE (byte[] -> Base64) ---
-    // Aceasta este aceeasi logica ca in Index.cshtml, adaptata pentru un singur produs (Model)
     string imgSrc = "";
     if (Model.ProductImage != null && Model.ProductImage.Length > 0)
     {
@@ -14,10 +12,9 @@
     }
     else
     {
-        // Am pus 600x600 pentru ca pagina de detalii e mai mare
+       
         imgSrc = "https://via.placeholder.com/600x600?text=No+Image";
     }
-    // --------------------------------------------------------
 }
 
 <div class="container my-5">

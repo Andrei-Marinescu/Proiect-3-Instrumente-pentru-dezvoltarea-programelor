@@ -1,7 +1,16 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\views\\products\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|c:\\facultate\\an4\\proiect-3-instrumente-pentru-dezvoltarea-programelor\\pcshop\\pcshop\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A1D222EB-BB6F-43FB-BB2F-602BD3A2BAF4}|PCShop\\PCShop.csproj|solutionrelative:pcshop\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Bookmark",
@@ -22,6 +31,32 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Views\\Products\\Index.cshtml",
+              "RelativeDocumentMoniker": "PCShop\\Views\\Products\\Index.cshtml",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Views\\Products\\Index.cshtml",
+              "RelativeToolTip": "PCShop\\Views\\Products\\Index.cshtml",
+              "ViewState": "AgIAAG0AAAAAAAAAAAAAwJUAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-03-11T13:37:53.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductsController.cs",
+              "DocumentMoniker": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Controllers\\ProductsController.cs",
+              "RelativeDocumentMoniker": "PCShop\\Controllers\\ProductsController.cs",
+              "ToolTip": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\Controllers\\ProductsController.cs",
+              "RelativeToolTip": "PCShop\\Controllers\\ProductsController.cs",
+              "ViewState": "AgIAALsAAAAAAAAAAAAswNYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-11T13:33:29.483Z",
+              "EditorCaption": ""
             }
           ]
         }
