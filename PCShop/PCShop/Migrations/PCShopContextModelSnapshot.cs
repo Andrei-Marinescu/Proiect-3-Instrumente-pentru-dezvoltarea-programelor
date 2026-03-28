@@ -322,8 +322,14 @@ namespace PCShop.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<string>("ExtractedPdfText")
+                        .HasColumnType("text");
+
                     b.Property<string>("Name")
                         .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("PdfFilePath")
                         .HasColumnType("text");
 
                     b.Property<decimal>("Price")

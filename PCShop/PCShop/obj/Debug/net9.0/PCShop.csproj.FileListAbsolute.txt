@@ -437,3 +437,10 @@ C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCS
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\1glga9aj39-k40t7x9p1a.gz
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\compressed\3jzwdw7zxj-k40t7x9p1a.gz
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.Core.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.DocumentLayoutAnalysis.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.Fonts.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.Package.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.Tokenization.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.Tokens.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.dll

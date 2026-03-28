@@ -8,16 +8,19 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PCShop.Helpers;
 using PCShop.Models;
+using Microsoft.AspNetCore.Hosting;
 
 namespace PCShop.Controllers
 {
     public class ProductsController : Controller
     {
         private readonly PCShopContext _context;
+        private readonly IWebHostEnvironment _webHostEnvironment;
 
-        public ProductsController(PCShopContext context)
+        public ProductsController(PCShopContext context, IWebHostEnvironment webHostEnvironment)
         {
             _context = context;
+            _webHostEnvironment = webHostEnvironment;
         }
 
         // GET: Products
@@ -83,7 +86,7 @@ namespace PCShop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Create([Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile)
+        public async Task<IActionResult> Create([Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile, IFormFile? pdfFile)
         {
             
             if (ModelState.IsValid)
@@ -95,6 +98,28 @@ namespace PCShop.Controllers
                         await imageFile.CopyToAsync(memoryStream);
                         product.ProductImage = memoryStream.ToArray();
                     }
+                }
+
+                if (pdfFile != null && pdfFile.Length > 0)
+                {
+                    product.ExtractedPdfText = PdfExtractor.ExtractText(pdfFile);
+
+                    string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "pdfs");
+
+                    if (!Directory.Exists(uploadsFolder))
+                    {
+                        Directory.CreateDirectory(uploadsFolder);
+                    }
+
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + pdfFile.FileName;
+                    string filePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await pdfFile.CopyToAsync(fileStream);
+                    }
+
+                    product.PdfFilePath = "/pdfs/" + uniqueFileName;
                 }
 
                 _context.Add(product);
@@ -131,7 +156,7 @@ namespace PCShop.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile)
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile, IFormFile? pdfFile) // <- am adaugat pdfFile
         {
             if (id != product.ProductId)
             {
@@ -140,6 +165,13 @@ namespace PCShop.Controllers
 
             if (ModelState.IsValid)
             {
+                var existingProduct = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.ProductId == id);
+                if (existingProduct == null)
+                {
+                    return NotFound();
+                }
+
+                // 1. PROCESARE IMAGINE
                 if (imageFile != null && imageFile.Length > 0)
                 {
                     using (var memoryStream = new System.IO.MemoryStream())
@@ -150,32 +182,62 @@ namespace PCShop.Controllers
                 }
                 else
                 {
-                    var existingProduct = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.ProductId == id);
-                    if (existingProduct != null)
+                    product.ProductImage = existingProduct.ProductImage;
+                }
+
+                if (pdfFile != null && pdfFile.Length > 0)
+                {
+                    product.ExtractedPdfText = PdfExtractor.ExtractText(pdfFile);
+
+                    string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "pdfs");
+                    if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
+
+                    if (!string.IsNullOrEmpty(existingProduct.PdfFilePath))
                     {
-                        product.ProductImage = existingProduct.ProductImage;
+                        string oldFilePath = Path.Combine(_webHostEnvironment.WebRootPath, existingProduct.PdfFilePath.TrimStart('/'));
+                        if (System.IO.File.Exists(oldFilePath))
+                        {
+                            System.IO.File.Delete(oldFilePath);
+                        }
+                    }
+
+                    string uniqueFileName = Guid.NewGuid().ToString() + "_" + pdfFile.FileName;
+                    string newFilePath = Path.Combine(uploadsFolder, uniqueFileName);
+
+                    using (var fileStream = new FileStream(newFilePath, FileMode.Create))
+                    {
+                        await pdfFile.CopyToAsync(fileStream);
+                    }
+
+                    product.PdfFilePath = "/pdfs/" + uniqueFileName;
+                }
+                else
+                {
+                    product.PdfFilePath = existingProduct.PdfFilePath;
+                    product.ExtractedPdfText = existingProduct.ExtractedPdfText;
+                }
+
+                try
+                {
+                    _context.Update(product);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ProductExists(product.ProductId))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
                     }
                 }
-                    try
-                    {
-                        _context.Update(product);
-                        await _context.SaveChangesAsync();
-                    }
-                    catch (DbUpdateConcurrencyException)
-                    {
-                        if (!ProductExists(product.ProductId))
-                        {
-                            return NotFound();
-                        }
-                        else
-                        {
-                            throw;
-                        }
-                    }
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
-            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name");
+
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", product.CategoryId);
+            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name", product.ProviderId);
             return View(product);
         }
 

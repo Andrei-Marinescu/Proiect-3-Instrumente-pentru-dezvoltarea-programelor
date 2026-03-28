@@ -768,5 +768,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"k40t7x9p1a"},{"Name":"integrity","Value":"sha256-5ABsjhpr00YThSv/0\u002BkdCK3IxYLe1lBv/qGy85jpYMs="},{"Name":"label","Value":"_content/PCShop/PCShop.bundle.scp.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"1186"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00225ABsjhpr00YThSv/0\u002BkdCK3IxYLe1lBv/qGy85jpYMs=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Nov 2025 08:39:41 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.o8eltdyx6a.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdfs\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"o8eltdyx6a"},{"Name":"integrity","Value":"sha256-qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U="},{"Name":"label","Value":"_content/PCShop/pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"335633"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Mar 2026 09:38:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/PCShop/pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\pdfs\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"335633"},{"Name":"Content-Type","Value":"application/pdf"},{"Name":"ETag","Value":"\u0022qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U=\u0022"},{"Name":"Last-Modified","Value":"Sun, 22 Mar 2026 09:38:29 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
   </ItemGroup>
 </Project>

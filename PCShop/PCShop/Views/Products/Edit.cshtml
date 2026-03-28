@@ -48,7 +48,7 @@
                             </div>
                         </div>
 
-                        <div class="card mb-3 border-secondary">
+                        <div class="card mb-3 border-secondary shadow-sm">
                             <div class="card-body bg-white">
                                 <label class="form-label fw-bold text-secondary">Imagine Produs</label>
 
@@ -67,10 +67,39 @@
                                 </div>
 
                                 <div class="input-group">
-                                    <input type="file" name="imageFile" class="form-control" id="customFile" />
+                                    <input type="file" name="imageFile" class="form-control" id="customFile" accept="image/*" />
                                     <label class="input-group-text" for="customFile">Upload Nou</label>
                                 </div>
                                 <small class="text-muted">Lasă gol dacă dorești să păstrezi imaginea actuală.</small>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4 border-secondary shadow-sm">
+                            <div class="card-body bg-white">
+                                <label class="form-label fw-bold text-secondary">Specificații / Manual (PDF)</label>
+
+                                <div class="mb-3 text-center">
+                                    @if (!string.IsNullOrEmpty(Model.PdfFilePath))
+                                    {
+                                        <div class="p-3 border rounded bg-light d-inline-block">
+                                            <i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size: 2rem;"></i>
+                                            <div class="fw-bold mt-1">Document curent atașat</div>
+                                            <a href="@Model.PdfFilePath" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
+                                                Vezi documentul curent
+                                            </a>
+                                        </div>
+                                    }
+                                    else
+                                    {
+                                        <div class="text-muted fst-italic">Nu există document PDF setat.</div>
+                                    }
+                                </div>
+
+                                <div class="input-group">
+                                    <input type="file" name="pdfFile" class="form-control" id="pdfUploadFile" accept=".pdf" />
+                                    <label class="input-group-text" for="pdfUploadFile">Upload Nou</label>
+                                </div>
+                                <small class="text-muted">Lasă gol dacă dorești să păstrezi documentul actual.</small>
                             </div>
                         </div>
 

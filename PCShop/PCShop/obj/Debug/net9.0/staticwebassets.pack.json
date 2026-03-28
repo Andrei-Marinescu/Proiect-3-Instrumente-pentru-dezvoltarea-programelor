@@ -257,6 +257,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.slim.min.map"
     },
     {
+      "Id": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\wwwroot\\pdfs\\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "PackagePath": "staticwebassets\\pdfs\\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf"
+    },
+    {
       "Id": "obj\\Debug\\net9.0\\staticwebassets\\msbuild.PCShop.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },

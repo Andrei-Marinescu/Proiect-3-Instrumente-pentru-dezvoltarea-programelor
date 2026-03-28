@@ -12,6 +12,9 @@ namespace PCShop.Models
         public decimal Price { get; set; }
         public byte[]? ProductImage { get; set; }
 
+        public string? PdfFilePath { get; set; }
+        public string? ExtractedPdfText { get; set; }
+
         // Cart - CartItem - Product
         // Product(1) : CartItem(N) | Product(N) : Cart(M)
         public ICollection<CartItem>? CartItems { get; set; }

@@ -15,7 +15,8 @@
           "Microsoft.EntityFrameworkCore.Sqlite": "9.0.10",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.10",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "9.0.0",
-          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4"
+          "Npgsql.EntityFrameworkCore.PostgreSQL": "9.0.4",
+          "PdfPig": "0.1.13"
         },
         "runtime": {
           "PCShop.dll": {}
@@ -1998,6 +1999,38 @@
           }
         }
       },
+      "PdfPig/0.1.13": {
+        "runtime": {
+          "lib/net8.0/UglyToad.PdfPig.Core.dll": {
+            "assemblyVersion": "0.1.13.0",
+            "fileVersion": "0.1.13.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.DocumentLayoutAnalysis.dll": {
+            "assemblyVersion": "0.1.13.0",
+            "fileVersion": "0.1.13.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Fonts.dll": {
+            "assemblyVersion": "0.1.13.0",
+            "fileVersion": "0.1.13.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Package.dll": {
+            "assemblyVersion": "0.1.13.0",
+            "fileVersion": "0.1.13.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Tokenization.dll": {
+            "assemblyVersion": "0.1.13.0",
+            "fileVersion": "0.1.13.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.Tokens.dll": {
+            "assemblyVersion": "0.1.13.0",
+            "fileVersion": "0.1.13.0"
+          },
+          "lib/net8.0/UglyToad.PdfPig.dll": {
+            "assemblyVersion": "0.1.13.0",
+            "fileVersion": "0.1.13.0"
+          }
+        }
+      },
       "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
         "dependencies": {
           "SQLitePCLRaw.lib.e_sqlite3": "2.1.10",
@@ -3304,6 +3337,13 @@
       "sha512": "sha512-v/GGlIj2dd7svplFmASWEueu62veKW0MrMtBaZ7QG8aJTSGv2yE+pgUGhXRcQ4nxNOEq/wLBrz1vkth/1SND7A==",
       "path": "nuget.versioning/6.11.0",
       "hashPath": "nuget.versioning.6.11.0.nupkg.sha512"
+    },
+    "PdfPig/0.1.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2AUWNKHbkDr2Ofgi2vVPN/Ya++jhsuHd54xeKveqKOwDiAy2E2QhczOUKyU29ADRHoEJgQUhwHFgtbD6nCZ2WA==",
+      "path": "pdfpig/0.1.13",
+      "hashPath": "pdfpig.0.1.13.nupkg.sha512"
     },
     "SQLitePCLRaw.bundle_e_sqlite3/2.1.10": {
       "type": "package",

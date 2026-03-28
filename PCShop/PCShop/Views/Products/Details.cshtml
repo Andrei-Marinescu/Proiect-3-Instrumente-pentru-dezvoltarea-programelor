@@ -12,7 +12,7 @@
     }
     else
     {
-       
+
         imgSrc = "https://via.placeholder.com/600x600?text=No+Image";
     }
 }
@@ -112,6 +112,16 @@
                 <div class="card-body">
                     <p class="text-muted">ID Produs intern: #@Model.ProductId</p>
                     <p class="text-muted">Descriere: @Model.Description</p>
+
+                    @if (!string.IsNullOrEmpty(Model.PdfFilePath))
+                    {
+                        <hr class="my-3">
+                        <div class="mt-3">
+                            <a href="@Model.PdfFilePath" target="_blank" class="btn btn-outline-primary">
+                                <i class="bi bi-file-earmark-pdf-fill"></i> Deschide Manual / Specificații (PDF)
+                            </a>
+                        </div>
+                    }
                 </div>
             </div>
         </div>

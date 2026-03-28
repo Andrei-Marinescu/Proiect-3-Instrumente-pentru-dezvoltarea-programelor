@@ -27388,6 +27388,88 @@
           "Value": "sha256-2u2XFgZyC96dP/elrO5ny/maD/llVl8JsX3pBm2SWT0="
         }
       ]
+    },
+    {
+      "Route": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.o8eltdyx6a.pdf",
+      "AssetFile": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "335633"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:38:29 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o8eltdyx6a"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "AssetFile": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "335633"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:38:29 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U="
+        }
+      ]
     }
   ]
 }

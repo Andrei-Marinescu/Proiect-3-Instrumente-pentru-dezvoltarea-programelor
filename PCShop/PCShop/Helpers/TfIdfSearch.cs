@@ -10,18 +10,16 @@ namespace PCShop.Helpers
     {
         public static List<Product> Search(List<Product> products, string query)
         {
-            
-            // List<string> queryTerms
             var queryTerms = Tokenize(query);
             if (!queryTerms.Any() || !products.Any()) return products;
 
             int totalProducts = products.Count;
             var ProductTokens = new Dictionary<int, List<string>>();
 
-           
             foreach (var product in products)
             {
-                var textToSearch = $"{product.Name} {product.Description}";
+                var textToSearch = product.ExtractedPdfText ?? string.Empty;
+
                 ProductTokens[product.ProductId] = Tokenize(textToSearch);
             }
 
@@ -36,7 +34,6 @@ namespace PCShop.Helpers
 
             foreach (var product in products)
             {
-                // List<string> tokens
                 var tokens = ProductTokens[product.ProductId];
                 int totalTokens = tokens.Count;
                 double documentScore = 0;
@@ -50,14 +47,12 @@ namespace PCShop.Helpers
                     documentScore += tf * idfScores.GetValueOrDefault(term, 0);
                 }
 
-                
                 if (documentScore > 0)
                 {
                     productScores.Add(product, documentScore);
                 }
             }
 
-          
             return productScores
                 .OrderByDescending(kvp => kvp.Value)
                 .Select(kvp => kvp.Key)

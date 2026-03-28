@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "BJsuD0d1I/ZFSLhzKooV/w0KMnnYvHGQi29feouQ+tg=",
+  "Hash": "TgPhSkCn5DoGsEyinANjEIob2GZWDbNqt++M6YrITSA=",
   "Source": "PCShop",
   "BasePath": "_content/PCShop",
   "Mode": "Default",
@@ -4026,6 +4026,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Identity": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\wwwroot\\pdfs\\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "SourceId": "PCShop",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\wwwroot\\",
+      "BasePath": "_content/PCShop",
+      "RelativePath": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580#[.{fingerprint}]?.pdf",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "o8eltdyx6a",
+      "Integrity": "qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\pdfs\\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf"
     },
     {
       "Identity": "C:\\Users\\mrpuf\\.nuget\\packages\\microsoft.aspnetcore.identity.ui\\9.0.10\\staticwebassets\\V5\\css\\site.css",
@@ -33034,6 +33055,88 @@
         {
           "Name": "integrity",
           "Value": "sha256-rOop4gTa0Md5rxfHNXVHh1HrlNbWa1brZ1pBu2HNINs="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.o8eltdyx6a.pdf",
+      "AssetFile": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\wwwroot\\pdfs\\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "335633"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:38:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "o8eltdyx6a"
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "AssetFile": "C:\\Facultate\\An4\\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\\PCShop\\PCShop\\wwwroot\\pdfs\\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "335633"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:38:29 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U="
         }
       ]
     }
