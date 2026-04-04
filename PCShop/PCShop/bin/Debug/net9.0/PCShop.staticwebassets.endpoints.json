@@ -27390,6 +27390,334 @@
       ]
     },
     {
+      "Route": "media/pc-video.5wsl9t43g4.mp4",
+      "AssetFile": "media/pc-video.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22930694"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ez0O3FmLxMGzVhDsp9QjUjtYuvt920QlwnKtiid/l1k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Mar 2026 14:11:12 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5wsl9t43g4"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ez0O3FmLxMGzVhDsp9QjUjtYuvt920QlwnKtiid/l1k="
+        },
+        {
+          "Name": "label",
+          "Value": "media/pc-video.mp4"
+        }
+      ]
+    },
+    {
+      "Route": "media/pc-video.mp4",
+      "AssetFile": "media/pc-video.mp4",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=3600, must-revalidate"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "22930694"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "video/mp4"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ez0O3FmLxMGzVhDsp9QjUjtYuvt920QlwnKtiid/l1k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 28 Mar 2026 14:11:12 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ez0O3FmLxMGzVhDsp9QjUjtYuvt920QlwnKtiid/l1k="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/200e3220-ae0d-4e62-b9cb-94511e94212f_Procesorul AMD Ryzen 5 5600X.8yueeqspqw.pdf",
+      "AssetFile": "pdfs/200e3220-ae0d-4e62-b9cb-94511e94212f_Procesorul AMD Ryzen 5 5600X.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "350835"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0PVl00DSZV7ogjxqqmwUb13DNxzEzL7YF9pqbblpOcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:44:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "8yueeqspqw"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-0PVl00DSZV7ogjxqqmwUb13DNxzEzL7YF9pqbblpOcE="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/200e3220-ae0d-4e62-b9cb-94511e94212f_Procesorul AMD Ryzen 5 5600X.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/200e3220-ae0d-4e62-b9cb-94511e94212f_Procesorul AMD Ryzen 5 5600X.pdf",
+      "AssetFile": "pdfs/200e3220-ae0d-4e62-b9cb-94511e94212f_Procesorul AMD Ryzen 5 5600X.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "350835"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"0PVl00DSZV7ogjxqqmwUb13DNxzEzL7YF9pqbblpOcE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:44:16 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-0PVl00DSZV7ogjxqqmwUb13DNxzEzL7YF9pqbblpOcE="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/26ba1d64-0d2f-4c95-a50d-c639f94115fc_Kingstone SSD SSNV3.k302xrm880.pdf",
+      "AssetFile": "pdfs/26ba1d64-0d2f-4c95-a50d-c639f94115fc_Kingstone SSD SSNV3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "351423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ANoDuho1yOQ2csOyh7ZlwVcuJeky0saj7LqGAQXQTR8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "k302xrm880"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-ANoDuho1yOQ2csOyh7ZlwVcuJeky0saj7LqGAQXQTR8="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/26ba1d64-0d2f-4c95-a50d-c639f94115fc_Kingstone SSD SSNV3.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/26ba1d64-0d2f-4c95-a50d-c639f94115fc_Kingstone SSD SSNV3.pdf",
+      "AssetFile": "pdfs/26ba1d64-0d2f-4c95-a50d-c639f94115fc_Kingstone SSD SSNV3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "351423"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"ANoDuho1yOQ2csOyh7ZlwVcuJeky0saj7LqGAQXQTR8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:36 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-ANoDuho1yOQ2csOyh7ZlwVcuJeky0saj7LqGAQXQTR8="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/34d2ed58-6416-4143-9817-2dfe81d9e2b5_Placa video GTX 1080 TI GAMING OC 11GB DDR5X 352.kne958xpfb.pdf",
+      "AssetFile": "pdfs/34d2ed58-6416-4143-9817-2dfe81d9e2b5_Placa video GTX 1080 TI GAMING OC 11GB DDR5X 352.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "348162"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cEf8/p36UmcFZaEjDWpGCLZ84tB68QuTI5Z6AeL+37k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:11 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "kne958xpfb"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cEf8/p36UmcFZaEjDWpGCLZ84tB68QuTI5Z6AeL+37k="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/34d2ed58-6416-4143-9817-2dfe81d9e2b5_Placa video GTX 1080 TI GAMING OC 11GB DDR5X 352.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/34d2ed58-6416-4143-9817-2dfe81d9e2b5_Placa video GTX 1080 TI GAMING OC 11GB DDR5X 352.pdf",
+      "AssetFile": "pdfs/34d2ed58-6416-4143-9817-2dfe81d9e2b5_Placa video GTX 1080 TI GAMING OC 11GB DDR5X 352.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "348162"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cEf8/p36UmcFZaEjDWpGCLZ84tB68QuTI5Z6AeL+37k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:11 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cEf8/p36UmcFZaEjDWpGCLZ84tB68QuTI5Z6AeL+37k="
+        }
+      ]
+    },
+    {
       "Route": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.o8eltdyx6a.pdf",
       "AssetFile": "pdfs/b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf",
       "Selectors": [],
@@ -27468,6 +27796,334 @@
         {
           "Name": "integrity",
           "Value": "sha256-qNNalye0CffK8irGwhIJ4yRYW1Hk9CprmnqfCaFXp4U="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/db030046-39ab-4421-bff9-f3e0ff7fa8ec_Samsung 980 PCIe 3.pdf",
+      "AssetFile": "pdfs/db030046-39ab-4421-bff9-f3e0ff7fa8ec_Samsung 980 PCIe 3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "355193"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qVMnUtqNS5V3CUlylmUKT+v//1NpEiuYEzgjmoK/4Qo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:22 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-qVMnUtqNS5V3CUlylmUKT+v//1NpEiuYEzgjmoK/4Qo="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/db030046-39ab-4421-bff9-f3e0ff7fa8ec_Samsung 980 PCIe 3.po77ttydhr.pdf",
+      "AssetFile": "pdfs/db030046-39ab-4421-bff9-f3e0ff7fa8ec_Samsung 980 PCIe 3.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "355193"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"qVMnUtqNS5V3CUlylmUKT+v//1NpEiuYEzgjmoK/4Qo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:22 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "po77ttydhr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-qVMnUtqNS5V3CUlylmUKT+v//1NpEiuYEzgjmoK/4Qo="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/db030046-39ab-4421-bff9-f3e0ff7fa8ec_Samsung 980 PCIe 3.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/eb5c9f55-06fa-4e43-87b4-69469cee6e08_Procesorul Intel Core i7 14700k.pdf",
+      "AssetFile": "pdfs/eb5c9f55-06fa-4e43-87b4-69469cee6e08_Procesorul Intel Core i7 14700k.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "347716"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3/Ra8vLk+n4YnMvJhQvat63ySo9Y1IqTP/aosPfv5Hg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:44:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-3/Ra8vLk+n4YnMvJhQvat63ySo9Y1IqTP/aosPfv5Hg="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/eb5c9f55-06fa-4e43-87b4-69469cee6e08_Procesorul Intel Core i7 14700k.vknidoqi1y.pdf",
+      "AssetFile": "pdfs/eb5c9f55-06fa-4e43-87b4-69469cee6e08_Procesorul Intel Core i7 14700k.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "347716"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"3/Ra8vLk+n4YnMvJhQvat63ySo9Y1IqTP/aosPfv5Hg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:44:46 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vknidoqi1y"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-3/Ra8vLk+n4YnMvJhQvat63ySo9Y1IqTP/aosPfv5Hg="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/eb5c9f55-06fa-4e43-87b4-69469cee6e08_Procesorul Intel Core i7 14700k.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/ecd0f331-e66d-40b8-88c5-ef32fe2cee8c_Placa video MSI RTX 5080 16GB.pdf",
+      "AssetFile": "pdfs/ecd0f331-e66d-40b8-88c5-ef32fe2cee8c_Placa video MSI RTX 5080 16GB.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "349039"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P+ZMEmqYLy4qKwAaBoerTOMxST8plkHe45KCwkvQPi4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:02 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-P+ZMEmqYLy4qKwAaBoerTOMxST8plkHe45KCwkvQPi4="
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/ecd0f331-e66d-40b8-88c5-ef32fe2cee8c_Placa video MSI RTX 5080 16GB.rtlz17z5hm.pdf",
+      "AssetFile": "pdfs/ecd0f331-e66d-40b8-88c5-ef32fe2cee8c_Placa video MSI RTX 5080 16GB.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "349039"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"P+ZMEmqYLy4qKwAaBoerTOMxST8plkHe45KCwkvQPi4=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:45:02 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "rtlz17z5hm"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-P+ZMEmqYLy4qKwAaBoerTOMxST8plkHe45KCwkvQPi4="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/ecd0f331-e66d-40b8-88c5-ef32fe2cee8c_Placa video MSI RTX 5080 16GB.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/f05bc12e-2945-4fa2-9e4c-09002ad3ad1f_Sursa Corsair CX750.oaxsco5rmn.pdf",
+      "AssetFile": "pdfs/f05bc12e-2945-4fa2-9e4c-09002ad3ad1f_Sursa Corsair CX750.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "328456"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cGxqTbRtPEe09JNIJ9/n+agCmJhQKoX4x1z3QJ53PLg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:44:06 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "oaxsco5rmn"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-cGxqTbRtPEe09JNIJ9/n+agCmJhQKoX4x1z3QJ53PLg="
+        },
+        {
+          "Name": "label",
+          "Value": "pdfs/f05bc12e-2945-4fa2-9e4c-09002ad3ad1f_Sursa Corsair CX750.pdf"
+        }
+      ]
+    },
+    {
+      "Route": "pdfs/f05bc12e-2945-4fa2-9e4c-09002ad3ad1f_Sursa Corsair CX750.pdf",
+      "AssetFile": "pdfs/f05bc12e-2945-4fa2-9e4c-09002ad3ad1f_Sursa Corsair CX750.pdf",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "328456"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "application/pdf"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"cGxqTbRtPEe09JNIJ9/n+agCmJhQKoX4x1z3QJ53PLg=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sun, 22 Mar 2026 09:44:06 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-cGxqTbRtPEe09JNIJ9/n+agCmJhQKoX4x1z3QJ53PLg="
         }
       ]
     }

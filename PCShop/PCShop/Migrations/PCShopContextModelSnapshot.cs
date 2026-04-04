@@ -329,6 +329,9 @@ namespace PCShop.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
+                    b.Property<byte[]>("OriginalImage")
+                        .HasColumnType("bytea");
+
                     b.Property<string>("PdfFilePath")
                         .HasColumnType("text");
 

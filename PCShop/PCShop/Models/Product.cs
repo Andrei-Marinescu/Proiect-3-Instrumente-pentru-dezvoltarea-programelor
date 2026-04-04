@@ -11,6 +11,7 @@ namespace PCShop.Models
         public int QuantityAvailable { get; set; }
         public decimal Price { get; set; }
         public byte[]? ProductImage { get; set; }
+        public byte[]? OriginalImage { get; set; }
 
         public string? PdfFilePath { get; set; }
         public string? ExtractedPdfText { get; set; }

@@ -1,14 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using PCShop.Helpers;
 using PCShop.Models;
-using Microsoft.AspNetCore.Hosting;
 
 namespace PCShop.Controllers
 {
@@ -31,7 +33,6 @@ namespace PCShop.Controllers
                 .Include(p => p.Provider)
                 .AsQueryable();
 
-        
             if (categoryId.HasValue)
             {
                 productsQuery = productsQuery.Where(p => p.CategoryId == categoryId);
@@ -44,29 +45,23 @@ namespace PCShop.Controllers
                 productsList = TfIdfSearch.Search(productsList, searchString);
             }
 
-
             ViewData["Categories"] = new SelectList(_context.Categories, "CategoryId", "Name", categoryId);
             ViewData["CurrentSearch"] = searchString;
 
             return View(productsList);
         }
+
         // GET: Products/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var product = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Provider)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
 
-            if (product == null)
-            {
-                return NotFound();
-            }
+            if (product == null) return NotFound();
 
             return View(product);
         }
@@ -81,35 +76,33 @@ namespace PCShop.Controllers
         }
 
         // POST: Products/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Create([Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile, IFormFile? pdfFile)
         {
-            
             if (ModelState.IsValid)
             {
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    using (var memoryStream = new System.IO.MemoryStream())
+                    using (var memoryStream = new MemoryStream())
                     {
                         await imageFile.CopyToAsync(memoryStream);
-                        product.ProductImage = memoryStream.ToArray();
+                        byte[] fileBytes = memoryStream.ToArray();
+                        product.ProductImage = fileBytes;
+                        product.OriginalImage = fileBytes; // Salvam si originalul înca de la creare
                     }
                 }
 
                 if (pdfFile != null && pdfFile.Length > 0)
                 {
-                    product.ExtractedPdfText = PdfExtractor.ExtractText(pdfFile);
+                    // Extragere si Compresie LZW pentru Create
+                    string rawText = PdfExtractor.ExtractText(pdfFile);
+                    List<int> compressedData = MultimediaHelper.CompressLZW(rawText);
+                    product.ExtractedPdfText = string.Join(",", compressedData);
 
                     string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "pdfs");
-
-                    if (!Directory.Exists(uploadsFolder))
-                    {
-                        Directory.CreateDirectory(uploadsFolder);
-                    }
+                    if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
                     string uniqueFileName = Guid.NewGuid().ToString() + "_" + pdfFile.FileName;
                     string filePath = Path.Combine(uploadsFolder, uniqueFileName);
@@ -135,60 +128,79 @@ namespace PCShop.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Edit(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var product = await _context.Products.FindAsync(id);
-            if (product == null)
-            {
-                return NotFound();
-            }
-            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name");
-            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name");
+            if (product == null) return NotFound();
+
+            ViewData["CategoryId"] = new SelectList(_context.Categories, "CategoryId", "Name", product.CategoryId);
+            ViewData["ProviderId"] = new SelectList(_context.Providers, "ProviderId", "Name", product.ProviderId);
             return View(product);
         }
 
         // POST: Products/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Authorize(Roles = "Admin")]
-        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile, IFormFile? pdfFile) // <- am adaugat pdfFile
+        public async Task<IActionResult> Edit(int id, [Bind("ProductId,Name,Description,QuantityAvailable,Price,ProviderId,CategoryId")] Product product, IFormFile? imageFile, IFormFile? pdfFile, string? mainImageAction, List<string> selectedFilters, float blurRadius = 5f, float rotationDegrees = 90f, int scalePercent = 50, int cropWidth = 200, int cropHeight = 200)
         {
-            if (id != product.ProductId)
-            {
-                return NotFound();
-            }
+            if (id != product.ProductId) return NotFound();
 
             if (ModelState.IsValid)
             {
                 var existingProduct = await _context.Products.AsNoTracking().FirstOrDefaultAsync(p => p.ProductId == id);
-                if (existingProduct == null)
-                {
-                    return NotFound();
-                }
+                if (existingProduct == null) return NotFound();
 
-                // 1. PROCESARE IMAGINE
+                // --- 1. procesare de imagine
                 if (imageFile != null && imageFile.Length > 0)
                 {
-                    using (var memoryStream = new System.IO.MemoryStream())
+                    // incarcarea unei imagini complet noua
+                    using (var memoryStream = new MemoryStream())
                     {
                         await imageFile.CopyToAsync(memoryStream);
-                        product.ProductImage = memoryStream.ToArray();
+                        byte[] newBytes = memoryStream.ToArray();
+                        product.ProductImage = newBytes;
+                        product.OriginalImage = newBytes;
                     }
                 }
                 else
                 {
+                    // Daca nu s-a incarcat o imagine noua, le pastram pe cele vechi din BD
                     product.ProductImage = existingProduct.ProductImage;
+                    product.OriginalImage = existingProduct.OriginalImage ?? existingProduct.ProductImage;
                 }
 
+                if (!string.IsNullOrEmpty(mainImageAction))
+                {
+                    // Reseteaza imaginea la original
+                    if (mainImageAction == "restore" && product.OriginalImage != null)
+                    {
+                        product.ProductImage = product.OriginalImage;
+                    }
+                    else if (mainImageAction == "modify" && selectedFilters != null && selectedFilters.Any() && product.ProductImage != null)
+                    {
+                        // Se aplica filtrele   
+                        product.ProductImage = MultimediaHelper.ProcessImage(
+                            product.ProductImage,
+                            selectedFilters,
+                            blurRadius,
+                            rotationDegrees,
+                            scalePercent,
+                            cropWidth,
+                            cropHeight
+                            );
+                    }
+                }
+
+                // Compresie LZW
                 if (pdfFile != null && pdfFile.Length > 0)
                 {
-                    product.ExtractedPdfText = PdfExtractor.ExtractText(pdfFile);
+                    // Extragere text si compresie
+                    string rawText = PdfExtractor.ExtractText(pdfFile);
+                    List<int> compressedData = MultimediaHelper.CompressLZW(rawText);
+                    product.ExtractedPdfText = string.Join(",", compressedData);
 
+                    // Salvare fisier fizic
                     string uploadsFolder = Path.Combine(_webHostEnvironment.WebRootPath, "pdfs");
                     if (!Directory.Exists(uploadsFolder)) Directory.CreateDirectory(uploadsFolder);
 
@@ -213,6 +225,7 @@ namespace PCShop.Controllers
                 }
                 else
                 {
+                    // Pastram pdf-ul vechi
                     product.PdfFilePath = existingProduct.PdfFilePath;
                     product.ExtractedPdfText = existingProduct.ExtractedPdfText;
                 }
@@ -224,14 +237,8 @@ namespace PCShop.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProductExists(product.ProductId))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    if (!ProductExists(product.ProductId)) return NotFound();
+                    else throw;
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -245,19 +252,14 @@ namespace PCShop.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<IActionResult> Delete(int? id)
         {
-            if (id == null)
-            {
-                return NotFound();
-            }
+            if (id == null) return NotFound();
 
             var product = await _context.Products
                 .Include(p => p.Category)
                 .Include(p => p.Provider)
                 .FirstOrDefaultAsync(m => m.ProductId == id);
-            if (product == null)
-            {
-                return NotFound();
-            }
+
+            if (product == null) return NotFound();
 
             return View(product);
         }
@@ -271,6 +273,11 @@ namespace PCShop.Controllers
             var product = await _context.Products.FindAsync(id);
             if (product != null)
             {
+                if (!string.IsNullOrEmpty(product.PdfFilePath))
+                {
+                    string filePath = Path.Combine(_webHostEnvironment.WebRootPath, product.PdfFilePath.TrimStart('/'));
+                    if (System.IO.File.Exists(filePath)) System.IO.File.Delete(filePath);
+                }
                 _context.Products.Remove(product);
             }
 

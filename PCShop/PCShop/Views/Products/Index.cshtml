@@ -5,12 +5,17 @@
     ViewData["Title"] = "Magazin Componente PC";
 }
 
-<div class="bg-light p-4 rounded mb-4 shadow-sm">
-    <div class="text-center mb-4">
-        <h1 class="display-5 fw-bold text-dark">Componente PC</h1>
-        <p class="lead text-muted">Cele mai performante piese pentru sistemul tau.</p>
+<div class="video-header-container mb-4 shadow-sm rounded overflow-hidden position-relative">
+    <video autoplay loop muted playsinline class="w-100" style="max-height: 350px; object-fit: cover; filter: brightness(0.6);">
+        <source src="/media/pc-video.mp4" type="video/mp4">
+        Browserul tău nu suportă tag-ul video.
+    </video>
+    <div class="position-absolute top-50 start-50 translate-middle text-center w-100 px-3">
+        <h1 class="display-4 fw-bold text-white text-shadow animation-fade-in">Descoperă Performanța Absolută</h1>
+        <p class="lead text-light text-shadow animation-fade-in-delayed">Cele mai bune componente pentru sistemul tău.</p>
     </div>
-
+</div>
+<div class="bg-light p-4 rounded mb-4 shadow-sm">
     <div class="row align-items-center justify-content-between g-3">
         <div class="col-md-8 col-lg-6 mx-auto">
             <form asp-action="Index" method="get" class="d-flex gap-2 align-items-center justify-content-center bg-white p-2 rounded border">
@@ -33,7 +38,7 @@
         </div>
         @if (User.IsInRole("Admin"))
         {
-            <div class="col-md-12 text-center mt-2">
+            <div class="col-md-12 text-center mt-3">
                 <a asp-action="Create" class="btn btn-success shadow-sm">
                     <i class="bi bi-plus-circle-fill"></i> Adauga Produs Nou
                 </a>
@@ -45,7 +50,7 @@
 <div class="container">
     @if (!Model.Any())
     {
-        <div class="text-center py-5">
+        <div class="text-center py-5 animation-fade-in">
             <h3 class="text-muted">Nu exista produse in aceasta categorie.</h3>
             <a asp-action="Index" class="btn btn-outline-primary mt-2">Vezi toate produsele</a>
         </div>
@@ -53,8 +58,15 @@
     else
     {
         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+            @{
+                int delayIndex = 0;
+            }
             @foreach (var item in Model)
             {
+                // Calculăm un delay dinamic pentru a crea efectul de cascadă la animație
+                double delay = delayIndex * 0.15;
+                delayIndex++;
+
                 string imgSrc = "";
                 if (item.ProductImage != null && item.ProductImage.Length > 0)
                 {
@@ -67,7 +79,7 @@
                 }
 
                 <div class="col">
-                    <div class="card h-100 shadow-sm border-0 product-card">
+                    <div class="card h-100 shadow-sm border-0 product-card" style="animation-delay: @(delay)s;">
 
                         <div class="position-relative bg-white text-center overflow-hidden rounded-top">
                             <img src="@imgSrc"
@@ -140,20 +152,67 @@
 </div>
 
 <style>
+    /* Efecte Hover Card */
     .product-card {
-        transition: all 0.3s ease-in-out;
+        opacity: 0; /* Invizibil la inceput pentru a permite animatiei sa ruleze */
+        animation: slideUpFade 0.6s ease-out forwards;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
         .product-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+            transform: translateY(-8px) !important;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15) !important;
+            z-index: 2;
         }
 
     .card-img-top {
-        transition: transform 0.3s ease;
+        transition: transform 0.4s ease;
     }
 
     .product-card:hover .card-img-top {
-        transform: scale(1.05);
+        transform: scale(1.08);
+    }
+
+    /* Animatii Text & Video */
+    .text-shadow {
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.7);
+    }
+
+    .animation-fade-in {
+        animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .animation-fade-in-delayed {
+        opacity: 0;
+        animation: fadeIn 1.5s ease-out 0.8s forwards;
+    }
+
+    /* Definitii Keyframes */
+    @@keyframes slideUpFade {
+        0%
+
+    {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
+
+    @@keyframes fadeIn {
+        0%
+
+    {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
     }
 </style>

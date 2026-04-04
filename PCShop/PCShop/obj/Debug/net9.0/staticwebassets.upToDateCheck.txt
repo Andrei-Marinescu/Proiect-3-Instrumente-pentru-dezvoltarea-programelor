@@ -123,4 +123,12 @@ wwwroot\lib\jquery-validation\LICENSE.md
 wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.js
 wwwroot\lib\jquery-validation-unobtrusive\dist\jquery.validate.unobtrusive.min.js
 wwwroot\lib\jquery-validation-unobtrusive\LICENSE.txt
+wwwroot\media\pc-video.mp4
+wwwroot\pdfs\200e3220-ae0d-4e62-b9cb-94511e94212f_Procesorul AMD Ryzen 5 5600X.pdf
+wwwroot\pdfs\26ba1d64-0d2f-4c95-a50d-c639f94115fc_Kingstone SSD SSNV3.pdf
+wwwroot\pdfs\34d2ed58-6416-4143-9817-2dfe81d9e2b5_Placa video GTX 1080 TI GAMING OC 11GB DDR5X 352.pdf
 wwwroot\pdfs\b2a49c69-3e4b-4d23-9246-5134c532b313_Placa video MSI Radeon RX 580.pdf
+wwwroot\pdfs\db030046-39ab-4421-bff9-f3e0ff7fa8ec_Samsung 980 PCIe 3.pdf
+wwwroot\pdfs\eb5c9f55-06fa-4e43-87b4-69469cee6e08_Procesorul Intel Core i7 14700k.pdf
+wwwroot\pdfs\ecd0f331-e66d-40b8-88c5-ef32fe2cee8c_Placa video MSI RTX 5080 16GB.pdf
+wwwroot\pdfs\f05bc12e-2945-4fa2-9e4c-09002ad3ad1f_Sursa Corsair CX750.pdf

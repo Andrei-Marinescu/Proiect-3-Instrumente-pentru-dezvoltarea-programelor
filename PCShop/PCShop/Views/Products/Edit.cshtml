@@ -10,7 +10,7 @@
             <div class="card shadow-lg border-0 rounded-3">
                 <div class="card-header bg-primary text-white p-4 rounded-top">
                     <h3 class="mb-0 fw-bold"><i class="bi bi-pencil-square"></i> Editează Produsul</h3>
-                    <small>Modifică detaliile componentei PC</small>
+                    <small>Modifică detaliile componentei PC și aplică efecte multimedia</small>
                 </div>
 
                 <div class="card-body p-5 bg-light">
@@ -48,36 +48,103 @@
                             </div>
                         </div>
 
-                        <div class="card mb-3 border-secondary shadow-sm">
+                        <div class="card mb-4 border-primary shadow-sm">
+                            <div class="card-header bg-primary text-white py-2">
+                                <i class="bi bi-image"></i> Imagine & Procesare Multimedia
+                            </div>
                             <div class="card-body bg-white">
-                                <label class="form-label fw-bold text-secondary">Imagine Produs</label>
-
                                 <div class="mb-3 text-center">
                                     @if (Model.ProductImage != null && Model.ProductImage.Length > 0)
                                     {
                                         string base64 = Convert.ToBase64String(Model.ProductImage);
                                         string imgSrc = String.Format("data:image/jpg;base64,{0}", base64);
-                                        <img src="@imgSrc" class="img-thumbnail shadow-sm" style="max-height: 150px;" alt="Imagine curenta" />
-                                        <div class="small text-muted mt-1">Imagine Curentă</div>
+                                        <img src="@imgSrc" class="img-thumbnail shadow-sm mb-2" style="max-height: 150px;" alt="Imagine curenta" />
+                                        <div class="small text-muted fw-bold text-success">
+                                            Imaginea afișată curent pe site
+                                        </div>
                                     }
                                     else
                                     {
-                                        <div class="text-muted fst-italic">Nu există imagine setată.</div>
+                                        <div class="text-muted fst-italic mb-2">Nu există imagine setată.</div>
                                     }
                                 </div>
 
-                                <div class="input-group">
+                                <div class="input-group mb-3">
                                     <input type="file" name="imageFile" class="form-control" id="customFile" accept="image/*" />
                                     <label class="input-group-text" for="customFile">Upload Nou</label>
                                 </div>
-                                <small class="text-muted">Lasă gol dacă dorești să păstrezi imaginea actuală.</small>
+                                <small class="text-muted d-block mb-3">Lasă gol dacă dorești să păstrezi imaginea actuală.</small>
+
+                                <div class="p-3 bg-light border rounded">
+                                    <label class="form-label fw-bold text-secondary mb-3">
+                                        <i class="bi bi-image"></i> Alege o acțiune pentru imagine
+                                    </label>
+
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="mainImageAction" id="mainNone" value="none" checked onchange="toggleFilters()">
+                                        <label class="form-check-label fw-bold" for="mainNone">Lasă imaginea așa cum este</label>
+                                    </div>
+
+                                    <div class="form-check mb-2">
+                                        <input class="form-check-input" type="radio" name="mainImageAction" id="mainRestore" value="restore" onchange="toggleFilters()">
+                                        <label class="form-check-label text-success fw-bold" for="mainRestore">
+                                            <i class="bi bi-arrow-counterclockwise"></i> Revino la imaginea originală
+                                        </label>
+                                    </div>
+
+                                    <div class="form-check mb-3">
+                                        <input class="form-check-input" type="radio" name="mainImageAction" id="mainModify" value="modify" onchange="toggleFilters()">
+                                        <label class="form-check-label text-primary fw-bold" for="mainModify">
+                                            <i class="bi bi-magic"></i> Modifică imaginea (Permite opțiuni multiple)
+                                        </label>
+                                    </div>
+
+                                    <div id="filterPanel" class="ps-4 py-2 border-start border-3 border-primary ms-3" style="transition: all 0.3s ease;">
+                                        <p class="small text-muted mb-2">Bifează efectele dorite (se vor aplica succesiv):</p>
+
+                                        <div class="form-check d-flex align-items-center mb-2">
+                                            <input class="form-check-input me-2" type="checkbox" name="selectedFilters" value="blur" id="chkBlur">
+                                            <label class="form-check-label me-3" style="width: 150px;" for="chkBlur">Blur (Intensitate):</label>
+                                            <input type="number" name="blurRadius" class="form-control form-control-sm" style="width: 80px;" value="5" min="1" max="50">
+                                        </div>
+
+                                        <div class="form-check d-flex align-items-center mb-2">
+                                            <input class="form-check-input me-2" type="checkbox" name="selectedFilters" value="rotate" id="chkRotate">
+                                            <label class="form-check-label me-3" style="width: 150px;" for="chkRotate">Rotire (Grade):</label>
+                                            <input type="number" name="rotationDegrees" class="form-control form-control-sm" style="width: 80px;" value="90">
+                                        </div>
+
+                                        <div class="form-check d-flex align-items-center mb-2">
+                                            <input class="form-check-input me-2" type="checkbox" name="selectedFilters" value="scale" id="chkScale">
+                                            <label class="form-check-label me-3" style="width: 150px;" for="chkScale">Scalare (Procent %):</label>
+                                            <input type="number" name="scalePercent" class="form-control form-control-sm" style="width: 80px;" value="50" min="1" max="200">
+                                        </div>
+
+                                        <div class="form-check d-flex align-items-center mb-2">
+                                            <input class="form-check-input me-2" type="checkbox" name="selectedFilters" value="crop" id="chkCrop">
+                                            <label class="form-check-label me-3" style="width: 150px;" for="chkCrop">Crop Centru (px):</label>
+                                            <div class="input-group input-group-sm" style="width: 200px;">
+                                                <span class="input-group-text">L</span>
+                                                <input type="number" name="cropWidth" class="form-control" value="300" placeholder="Lățime">
+                                                <span class="input-group-text">Î</span>
+                                                <input type="number" name="cropHeight" class="form-control" value="300" placeholder="Înălțime">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-check d-flex align-items-center">
+                                            <input class="form-check-input me-2" type="checkbox" name="selectedFilters" value="grayscale" id="chkGrayscale">
+                                            <label class="form-check-label" for="chkGrayscale">Aplică filtru Alb-Negru</label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
                         <div class="card mb-4 border-secondary shadow-sm">
+                            <div class="card-header bg-secondary text-white py-2">
+                                <i class="bi bi-file-earmark-pdf"></i> Specificații Tehnice (PDF)
+                            </div>
                             <div class="card-body bg-white">
-                                <label class="form-label fw-bold text-secondary">Specificații / Manual (PDF)</label>
-
                                 <div class="mb-3 text-center">
                                     @if (!string.IsNullOrEmpty(Model.PdfFilePath))
                                     {
@@ -85,13 +152,13 @@
                                             <i class="bi bi-file-earmark-pdf-fill text-danger" style="font-size: 2rem;"></i>
                                             <div class="fw-bold mt-1">Document curent atașat</div>
                                             <a href="@Model.PdfFilePath" target="_blank" class="btn btn-sm btn-outline-primary mt-2">
-                                                Vezi documentul curent
+                                                Vezi PDF curent
                                             </a>
                                         </div>
                                     }
                                     else
                                     {
-                                        <div class="text-muted fst-italic">Nu există document PDF setat.</div>
+                                        <div class="text-muted fst-italic mb-2">Nu există document PDF atașat.</div>
                                     }
                                 </div>
 
@@ -99,7 +166,9 @@
                                     <input type="file" name="pdfFile" class="form-control" id="pdfUploadFile" accept=".pdf" />
                                     <label class="input-group-text" for="pdfUploadFile">Upload Nou</label>
                                 </div>
-                                <small class="text-muted">Lasă gol dacă dorești să păstrezi documentul actual.</small>
+                                <small class="text-muted mt-2 d-block">
+                                    <i class="bi bi-info-circle text-info"></i> Sistemul va extrage automat textul din PDF și îl va stoca folosind algoritmul de <strong>compresie LZW</strong> pentru a economisi spațiu în baza de date.
+                                </small>
                             </div>
                         </div>
 
@@ -124,9 +193,11 @@
                             </div>
                         </div>
 
-                        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                        <div class="d-grid gap-2 d-md-flex justify-content-md-end mt-4">
                             <a asp-action="Index" class="btn btn-outline-secondary me-md-2 px-4">Anulează</a>
-                            <input type="submit" value="Salvează Modificările" class="btn btn-primary px-5 fw-bold" />
+                            <button type="submit" class="btn btn-primary px-5 fw-bold">
+                                <i class="bi bi-save"></i> Salvează Modificările
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -136,6 +207,23 @@
 </div>
 
 @section Scripts {
+    <script>
+        function toggleFilters() {
+            var isModifyChecked = document.getElementById('mainModify').checked;
+            var filterPanel = document.getElementById('filterPanel');
+
+            if (isModifyChecked) {
+                filterPanel.style.opacity = '1';
+                filterPanel.style.pointerEvents = 'auto'; 
+            } else {
+                filterPanel.style.opacity = '0.4';
+                filterPanel.style.pointerEvents = 'none'; 
+            }
+        }
+
+        document.addEventListener("DOMContentLoaded", toggleFilters);
+    </script>
+
     @{
         await Html.RenderPartialAsync("_ValidationScriptsPartial");
     }

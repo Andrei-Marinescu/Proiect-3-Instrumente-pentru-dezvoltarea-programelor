@@ -2,29 +2,33 @@
     ViewData["Title"] = "Acasă";
 }
 
-<div class="p-5 mb-4 bg-dark rounded-3 position-relative overflow-hidden text-white shadow"
-     style="background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1587202372775-e229f172b9d7?q=80&w=2574&auto=format&fit=crop');
-            background-size: cover; background-position: center; min-height: 500px; display: flex; align-items: center;">
+<div class="p-0 mb-4 bg-dark position-relative overflow-hidden text-white shadow d-flex align-items-center justify-content-center"
+     style="min-height: 500px;">
 
-    <div class="container-fluid py-5 text-center">
-        <h1 class="display-3 fw-bold">Construiește PC-ul Visurilor Tale</h1>
-        <p class="col-md-8 fs-4 mx-auto mb-4 text-light opacity-75">
+    <video autoplay loop muted playsinline class="position-absolute top-50 start-50 translate-middle"
+           style="min-width: 100%; min-height: 100%; width: auto; height: auto; object-fit: cover; z-index: 0; filter: brightness(0.4);">
+        <source src="~/media/pc-video.mp4" type="video/mp4">
+        Browserul tău nu suportă tag-ul video.
+    </video>
+
+    <div class="container-fluid py-5 text-center position-relative" style="z-index: 1;">
+        <h1 class="display-3 fw-bold animation-fade-in text-shadow">Construiește PC-ul Visurilor Tale</h1>
+        <p class="col-md-8 fs-4 mx-auto mb-4 text-light opacity-100 animation-fade-in-delayed text-shadow">
             Cele mai performante componente, periferice de gaming și accesorii IT, toate într-un singur loc.
         </p>
-        <div class="d-flex justify-content-center gap-3">
+        <div class="d-flex justify-content-center gap-3 animation-slide-up">
             <a asp-controller="Products" asp-action="Index" class="btn btn-primary btn-lg px-4 py-2 shadow fw-bold">
                 <i class="bi bi-cart-fill me-2"></i> Vezi Produsele
             </a>
             @if (!User.Identity.IsAuthenticated)
             {
-                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-light btn-lg px-4 py-2 fw-bold">
+                <a asp-area="Identity" asp-page="/Account/Register" class="btn btn-outline-light btn-lg px-4 py-2 fw-bold shadow">
                     Creează Cont
                 </a>
             }
         </div>
     </div>
 </div>
-
 <div class="container py-5">
     <div class="row g-4 text-center">
         <div class="col-md-4">
@@ -132,6 +136,7 @@
 </div>
 
 <style>
+    /* Efecte Hover Card */
     .hover-effect {
         transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -158,6 +163,53 @@
 
             .category-card:hover img {
                 transform: scale(1.1);
-                opacity: 0.3 !important; /* Mai intunecat la hover pentru a scoate textul in evidenta */
+                opacity: 0.3 !important;
             }
+
+    /* Animații Noi Pentru Textul de pe Video */
+    .text-shadow {
+        text-shadow: 2px 2px 10px rgba(0,0,0,0.8);
+    }
+
+    .animation-fade-in {
+        animation: fadeIn 1.5s ease-out forwards;
+    }
+
+    .animation-fade-in-delayed {
+        opacity: 0;
+        animation: fadeIn 1.5s ease-out 0.8s forwards;
+    }
+
+    .animation-slide-up {
+        opacity: 0;
+        animation: slideUpFade 1.2s ease-out 1.2s forwards;
+    }
+
+    @@keyframes fadeIn {
+        0%
+
+    {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+
+    }
+
+    @@keyframes slideUpFade {
+        0%
+
+    {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    }
 </style>

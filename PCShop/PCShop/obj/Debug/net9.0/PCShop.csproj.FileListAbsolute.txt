@@ -444,3 +444,4 @@ C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCS
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.Tokenization.dll
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.Tokens.dll
 C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\UglyToad.PdfPig.dll
+C:\Facultate\An4\Proiect-3-Instrumente-pentru-dezvoltarea-programelor\PCShop\PCShop\bin\Debug\net9.0\SixLabors.ImageSharp.dll
